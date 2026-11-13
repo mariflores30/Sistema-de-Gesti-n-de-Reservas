@@ -8,8 +8,9 @@ package modelo;
  *
  * @author maria
  */
-public enum TipoServicio {
-    Baño8000,
-    Corte12000,
-    BañoyCorte18000;
+public enum EstadoReserva {
+    CONFIRMADA,
+    HOSPEDADO,
+    FINALIZADA,
+    VENCIDA
 }

@@ -9,11 +9,10 @@ package modelo;
  * @author maria
  */
 public class HabitacionFactory {
+ public static Habitacion crearHabitacion(String numero, String tipo) {
 
-    public static Habitacion crearHabitacion(String numero, String tipo) {
-
-        if (tipo == null || tipo.equals("")) {
-            return null;
+        if (tipo == null) {
+            throw new IllegalArgumentException("El tipo no puede ser null");
         }
 
         if (tipo.equalsIgnoreCase("Individual")) {
@@ -24,9 +23,10 @@ public class HabitacionFactory {
 
         } else if (tipo.equalsIgnoreCase("Familiar")) {
             return new HabitacionFamiliar(numero);
-        }
 
-        return null;
+        } else {
+            throw new IllegalArgumentException("Tipo no valido: " + tipo);
+        }
     }
 }
 
