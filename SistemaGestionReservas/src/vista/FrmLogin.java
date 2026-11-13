@@ -48,20 +48,26 @@ public class FrmLogin extends javax.swing.JFrame {
 
         PnlPrincipal.setBackground(new java.awt.Color(0, 0, 102));
 
+        lblSubtitulo.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        lblSubtitulo.setForeground(new java.awt.Color(255, 255, 255));
+        lblSubtitulo.setText("Sistema de gestión hotelera");
+
         javax.swing.GroupLayout PnlPrincipalLayout = new javax.swing.GroupLayout(PnlPrincipal);
         PnlPrincipal.setLayout(PnlPrincipalLayout);
         PnlPrincipalLayout.setHorizontalGroup(
             PnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 492, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlPrincipalLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblSubtitulo)
+                .addGap(61, 61, 61))
         );
         PnlPrincipalLayout.setVerticalGroup(
             PnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 69, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlPrincipalLayout.createSequentialGroup()
+                .addContainerGap(26, Short.MAX_VALUE)
+                .addComponent(lblSubtitulo)
+                .addGap(18, 18, 18))
         );
-
-        lblSubtitulo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblSubtitulo.setForeground(new java.awt.Color(0, 0, 51));
-        lblSubtitulo.setText("Sistema de gestión hotelera");
 
         lblUsuario.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
         lblUsuario.setForeground(new java.awt.Color(0, 0, 51));
@@ -71,7 +77,6 @@ public class FrmLogin extends javax.swing.JFrame {
         lblContrasena.setForeground(new java.awt.Color(0, 0, 51));
         lblContrasena.setText("Contraseña");
 
-        txtContrasena.setText("jPasswordField1");
         txtContrasena.addActionListener(this::txtContrasenaActionPerformed);
 
         btnIniciarSesion.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
@@ -80,7 +85,7 @@ public class FrmLogin extends javax.swing.JFrame {
         btnIniciarSesion.setText("Iniciar Sesión");
         btnIniciarSesion.addActionListener(this::btnIniciarSesionActionPerformed);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/hotel.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/habitacion.png"))); // NOI18N
 
         lblTitulo.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(0, 0, 51));
@@ -94,50 +99,47 @@ public class FrmLogin extends javax.swing.JFrame {
             pnlMensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(PnlPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pnlMensajeLayout.createSequentialGroup()
-                .addGap(114, 114, 114)
-                .addComponent(lblContrasena)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(195, 195, 195)
+                .addComponent(jLabel3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(pnlMensajeLayout.createSequentialGroup()
+                .addGroup(pnlMensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlMensajeLayout.createSequentialGroup()
+                        .addGap(92, 92, 92)
+                        .addComponent(lblContrasena)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMensajeLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblUsuario)
+                        .addGap(27, 27, 27)))
+                .addGroup(pnlMensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlMensajeLayout.createSequentialGroup()
+                        .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 105, Short.MAX_VALUE))
+                    .addGroup(pnlMensajeLayout.createSequentialGroup()
+                        .addGroup(pnlMensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblTitulo)
+                            .addComponent(txtContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMensajeLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pnlMensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(pnlMensajeLayout.createSequentialGroup()
-                            .addComponent(lblUsuario)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addContainerGap())
-                        .addGroup(pnlMensajeLayout.createSequentialGroup()
-                            .addComponent(lblSubtitulo)
-                            .addGap(126, 126, 126)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMensajeLayout.createSequentialGroup()
-                        .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(141, 141, 141))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMensajeLayout.createSequentialGroup()
                         .addComponent(btnMensaje)
-                        .addGap(195, 195, 195))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMensajeLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(pnlMensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(175, 175, 175))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMensajeLayout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(203, 203, 203))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMensajeLayout.createSequentialGroup()
-                        .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(173, 173, 173))))
+                        .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(117, 117, 117))))
         );
         pnlMensajeLayout.setVerticalGroup(
             pnlMensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlMensajeLayout.createSequentialGroup()
                 .addComponent(PnlPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblSubtitulo)
-                .addGap(26, 26, 26)
+                .addGap(13, 13, 13)
+                .addComponent(lblTitulo)
+                .addGap(18, 18, 18)
                 .addGroup(pnlMensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUsuario)
                     .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -145,11 +147,11 @@ public class FrmLogin extends javax.swing.JFrame {
                 .addGroup(pnlMensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblContrasena))
-                .addGap(32, 32, 32)
+                .addGap(28, 28, 28)
                 .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(18, 18, 18)
                 .addComponent(btnMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
