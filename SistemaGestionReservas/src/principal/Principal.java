@@ -4,15 +4,16 @@
  */
 package principal;
 import vista.FrmLogin;
+import javax.swing.SwingUtilities;
 /**
  *
  * @author maria
  */
 public class Principal {
-      public static void main(String[] args) {
-
-        FrmLogin login = new FrmLogin();
-        login.setVisible(true);
-
+    
+ public static void main(String[] args) {
+    SwingUtilities.invokeLater(() -> {
+        new FrmLogin().setVisible(true);
+        });
     }
 }
