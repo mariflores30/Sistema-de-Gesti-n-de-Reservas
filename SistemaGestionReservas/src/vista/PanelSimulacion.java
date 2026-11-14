@@ -16,6 +16,18 @@ public class PanelSimulacion extends javax.swing.JPanel {
     public PanelSimulacion() {
         initComponents();
     }
+    public javax.swing.JTextField getTxtFechaReferencia(){
+        return txtFechaReferencia;
+    }
+    public javax.swing.JButton getBtnSimular(){
+        return btnSimular;
+    }
+    public javax.swing.JTable getTblSimulacion(){
+        return tblSimulacion;
+    }
+    public void mostrarMensaje(String mensaje) {
+    javax.swing.JOptionPane.showMessageDialog(this, mensaje);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,7 +44,7 @@ public class PanelSimulacion extends javax.swing.JPanel {
         txtFechaReferencia = new javax.swing.JTextField();
         btnSimular = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblSimulacion = new javax.swing.JTable();
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -50,7 +62,7 @@ public class PanelSimulacion extends javax.swing.JPanel {
         btnSimular.setText("Simular");
         jPanel1.add(btnSimular, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, -1, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblSimulacion.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -76,7 +88,7 @@ public class PanelSimulacion extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblSimulacion);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 620, 230));
 
@@ -101,9 +113,9 @@ public class PanelSimulacion extends javax.swing.JPanel {
     private javax.swing.JButton btnSimular;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblFechaReferencia;
     private javax.swing.JLabel lblSimulacion;
+    private javax.swing.JTable tblSimulacion;
     private javax.swing.JTextField txtFechaReferencia;
     // End of variables declaration//GEN-END:variables
 }

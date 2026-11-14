@@ -16,6 +16,22 @@ public class PanelDisponibilidad extends javax.swing.JPanel {
     public PanelDisponibilidad() {
         initComponents();
     }
+    
+    public javax.swing.JTextField getTxtFechaConsulta(){
+        return txtFechaConsulta;
+    }
+    public javax.swing.JButton getBtnConsultar(){
+        return btnConsultar;
+    }
+    public javax.swing.JLabel getLblCantidad(){
+        return lblCantidad;
+    }
+    public javax.swing.JTextArea getTxaHabitaciones(){
+        return txaHabitaciones;
+    }
+    public void mostrarMensaje(String mensaje){
+        javax.swing.JOptionPane.showMessageDialog(this,mensaje);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

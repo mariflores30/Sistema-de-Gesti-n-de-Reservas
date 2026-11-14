@@ -16,6 +16,40 @@ public class PanelReservas extends javax.swing.JPanel {
     public PanelReservas() {
         initComponents();
     }
+    public javax.swing.JComboBox<String> getCmbHuesped(){
+        return cmbHuesped;
+    }
+    public javax.swing.JComboBox<String> getCmbHabitacion(){
+        return cmbHabitacion;
+    }
+    public javax.swing.JTextField getTxtPersonas() {
+        return txtPersonas;
+    }
+    public javax.swing.JTextField getTxtFechaEntrada() {
+        return txtFechaEntrada;
+    }
+    public javax.swing.JTextField getTxtFechaSalida() {
+        return txtFechaSalida;
+    }
+    public javax.swing.JButton getBtnRegistrar() {
+        return btnRegistrar;
+    }
+    public javax.swing.JButton getBtnLimpiar() {
+        return btnLimpiar;
+    }
+    public javax.swing.JTable getTblReservas() {
+    return tblReservas;
+    }
+    
+    public void limpiarCampos(){
+        txtPersonas.setText("");
+        txtFechaEntrada.setText("");
+        txtFechaSalida.setText("");
+    }
+    public void mostrarMensaje(String mensaje){
+        javax.swing.JOptionPane.showMessageDialog(this, mensaje);
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

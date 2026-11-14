@@ -19,6 +19,21 @@ public class FrmLogin extends javax.swing.JFrame {
         initComponents();
          btnMensaje.setVisible(false);
     }
+    public javax.swing.JTextField getTxtUsuario() {
+        return txtUsuario;
+    }
+
+    public javax.swing.JPasswordField getTxtContrasena() {
+        return txtContrasena;
+    }
+
+    public javax.swing.JButton getBtnIniciarSesion() {
+        return btnIniciarSesion;
+    }
+
+    public void mostrarMensaje(String mensaje) {
+        javax.swing.JOptionPane.showMessageDialog(this, mensaje);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
