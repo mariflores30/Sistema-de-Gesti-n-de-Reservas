@@ -15,7 +15,12 @@ public class PanelHuespedes extends javax.swing.JPanel {
      */
     public PanelHuespedes() {
         initComponents();
-    }
+     tblHuespedes.getTableHeader().setBackground(
+        new java.awt.Color(215, 233, 250));
+    tblHuespedes.getTableHeader().setForeground(
+        new java.awt.Color(0, 0, 51));
+    tblHuespedes.getTableHeader().setOpaque(true);
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,19 +31,198 @@ public class PanelHuespedes extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        pnlEncabezado = new javax.swing.JPanel();
+        lblEncabezado = new javax.swing.JLabel();
+        pnlDatosHuesped = new javax.swing.JPanel();
+        lblTituloHuespedes = new javax.swing.JLabel();
+        lblIdentificacion = new javax.swing.JLabel();
+        lblNombreCompleto = new javax.swing.JLabel();
+        lblTelefono = new javax.swing.JLabel();
+        txtIdentificacion = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JTextField();
+        txtCorreo = new javax.swing.JTextField();
+        txtTelefono = new javax.swing.JTextField();
+        ScrollHuespedes = new javax.swing.JScrollPane();
+        tblHuespedes = new javax.swing.JTable();
+
+        pnlEncabezado.setBackground(new java.awt.Color(255, 255, 255));
+
+        lblEncabezado.setBackground(new java.awt.Color(0, 23, 75));
+        lblEncabezado.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblEncabezado.setForeground(new java.awt.Color(255, 255, 255));
+        lblEncabezado.setText("                                         Registro de huespedes ");
+        lblEncabezado.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        lblEncabezado.setOpaque(true);
+
+        pnlDatosHuesped.setBackground(new java.awt.Color(255, 255, 255));
+        pnlDatosHuesped.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 179, 236)));
+        pnlDatosHuesped.setForeground(new java.awt.Color(232, 242, 252));
+
+        lblTituloHuespedes.setBackground(new java.awt.Color(215, 233, 250));
+        lblTituloHuespedes.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lblTituloHuespedes.setForeground(new java.awt.Color(0, 0, 51));
+        lblTituloHuespedes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/camara.png"))); // NOI18N
+        lblTituloHuespedes.setText("  Huéspedes");
+        lblTituloHuespedes.setOpaque(true);
+
+        lblIdentificacion.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
+        lblIdentificacion.setForeground(new java.awt.Color(0, 0, 51));
+        lblIdentificacion.setText("Indetificacion:");
+
+        lblNombreCompleto.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
+        lblNombreCompleto.setForeground(new java.awt.Color(0, 0, 51));
+        lblNombreCompleto.setText("Nombre Completo:");
+
+        lblTelefono.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
+        lblTelefono.setForeground(new java.awt.Color(0, 0, 51));
+        lblTelefono.setText("Teléfono:");
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 51));
+        jLabel1.setText("correo electrónico:");
+
+        txtNombre.addActionListener(this::txtNombreActionPerformed);
+
+        txtCorreo.addActionListener(this::txtCorreoActionPerformed);
+
+        txtTelefono.addActionListener(this::txtTelefonoActionPerformed);
+
+        javax.swing.GroupLayout pnlDatosHuespedLayout = new javax.swing.GroupLayout(pnlDatosHuesped);
+        pnlDatosHuesped.setLayout(pnlDatosHuespedLayout);
+        pnlDatosHuespedLayout.setHorizontalGroup(
+            pnlDatosHuespedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDatosHuespedLayout.createSequentialGroup()
+                .addGroup(pnlDatosHuespedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlDatosHuespedLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblTituloHuespedes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(pnlDatosHuespedLayout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(pnlDatosHuespedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(lblNombreCompleto)
+                            .addGroup(pnlDatosHuespedLayout.createSequentialGroup()
+                                .addComponent(lblIdentificacion)
+                                .addGap(12, 12, 12)))
+                        .addGap(70, 70, 70)
+                        .addGroup(pnlDatosHuespedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtIdentificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(pnlDatosHuespedLayout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addComponent(lblTelefono)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlDatosHuespedLayout.setVerticalGroup(
+            pnlDatosHuespedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDatosHuespedLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblTituloHuespedes, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(pnlDatosHuespedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblIdentificacion)
+                    .addComponent(txtIdentificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlDatosHuespedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNombreCompleto)
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlDatosHuespedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlDatosHuespedLayout.createSequentialGroup()
+                        .addComponent(lblTelefono)
+                        .addGap(14, 14, 14)
+                        .addComponent(jLabel1))
+                    .addGroup(pnlDatosHuespedLayout.createSequentialGroup()
+                        .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+
+        tblHuespedes.setBackground(new java.awt.Color(255, 255, 255));
+        tblHuespedes.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
+        tblHuespedes.setForeground(new java.awt.Color(0, 0, 51));
+        tblHuespedes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Identificación:", "Nombre Completo:", "Teléfono:", "Correo electrónico:"
+            }
+        ));
+        ScrollHuespedes.setViewportView(tblHuespedes);
+
+        javax.swing.GroupLayout pnlEncabezadoLayout = new javax.swing.GroupLayout(pnlEncabezado);
+        pnlEncabezado.setLayout(pnlEncabezadoLayout);
+        pnlEncabezadoLayout.setHorizontalGroup(
+            pnlEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEncabezadoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pnlDatosHuesped, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblEncabezado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ScrollHuespedes, javax.swing.GroupLayout.DEFAULT_SIZE, 572, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        pnlEncabezadoLayout.setVerticalGroup(
+            pnlEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEncabezadoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(pnlDatosHuesped, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ScrollHuespedes, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 461, Short.MAX_VALUE)
+            .addComponent(pnlEncabezado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 321, Short.MAX_VALUE)
+            .addComponent(pnlEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreActionPerformed
+
+    private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCorreoActionPerformed
+
+    private void txtTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelefonoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane ScrollHuespedes;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblEncabezado;
+    private javax.swing.JLabel lblIdentificacion;
+    private javax.swing.JLabel lblNombreCompleto;
+    private javax.swing.JLabel lblTelefono;
+    private javax.swing.JLabel lblTituloHuespedes;
+    private javax.swing.JPanel pnlDatosHuesped;
+    private javax.swing.JPanel pnlEncabezado;
+    private javax.swing.JTable tblHuespedes;
+    private javax.swing.JTextField txtCorreo;
+    private javax.swing.JTextField txtIdentificacion;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }
