@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package vista;
-
+import controlador.ControladorHuespedes;
 /**
  *
  * @author maria
@@ -20,7 +20,9 @@ public class PanelHuespedes extends javax.swing.JPanel {
     tblHuespedes.getTableHeader().setForeground(
         new java.awt.Color(0, 0, 51));
     tblHuespedes.getTableHeader().setOpaque(true);
-}
+   
+    new ControladorHuespedes(txtIdentificacion,txtNombre,txtTelefono,txtCorreo,tblHuespedes,btnRegistrar,btnLimpiar);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -45,6 +47,8 @@ public class PanelHuespedes extends javax.swing.JPanel {
         txtTelefono = new javax.swing.JTextField();
         ScrollHuespedes = new javax.swing.JScrollPane();
         tblHuespedes = new javax.swing.JTable();
+        btnLimpiar = new javax.swing.JButton();
+        btnRegistrar = new javax.swing.JButton();
 
         pnlEncabezado.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -160,6 +164,19 @@ public class PanelHuespedes extends javax.swing.JPanel {
         ));
         ScrollHuespedes.setViewportView(tblHuespedes);
 
+        btnLimpiar.setBackground(new java.awt.Color(215, 233, 250));
+        btnLimpiar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        btnLimpiar.setForeground(new java.awt.Color(0, 0, 51));
+        btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/eliminar.png"))); // NOI18N
+        btnLimpiar.setText("Limpiar");
+
+        btnRegistrar.setBackground(new java.awt.Color(215, 233, 250));
+        btnRegistrar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        btnRegistrar.setForeground(new java.awt.Color(0, 0, 51));
+        btnRegistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/huespedes.png"))); // NOI18N
+        btnRegistrar.setText("Registrar");
+        btnRegistrar.setOpaque(true);
+
         javax.swing.GroupLayout pnlEncabezadoLayout = new javax.swing.GroupLayout(pnlEncabezado);
         pnlEncabezado.setLayout(pnlEncabezadoLayout);
         pnlEncabezadoLayout.setHorizontalGroup(
@@ -171,6 +188,12 @@ public class PanelHuespedes extends javax.swing.JPanel {
                     .addComponent(lblEncabezado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ScrollHuespedes, javax.swing.GroupLayout.DEFAULT_SIZE, 572, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEncabezadoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(142, 142, 142))
         );
         pnlEncabezadoLayout.setVerticalGroup(
             pnlEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,9 +202,13 @@ public class PanelHuespedes extends javax.swing.JPanel {
                 .addComponent(lblEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(pnlDatosHuesped, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ScrollHuespedes, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnLimpiar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(ScrollHuespedes, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -211,6 +238,8 @@ public class PanelHuespedes extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane ScrollHuespedes;
+    private javax.swing.JButton btnLimpiar;
+    private javax.swing.JButton btnRegistrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblEncabezado;
     private javax.swing.JLabel lblIdentificacion;
