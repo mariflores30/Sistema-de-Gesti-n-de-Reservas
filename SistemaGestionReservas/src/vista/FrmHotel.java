@@ -18,6 +18,13 @@ public class FrmHotel extends javax.swing.JFrame {
     public FrmHotel() {
         initComponents();
     }
+    public javax.swing.JButton getBtnCambiarUsuario() {
+    return btnCambiarUsuario;
+    }
+
+    public void setRecepcionista(String nombre) {
+    lblRecepcionista.setText("Recepcionista: " + nombre);
+     }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,10 +43,10 @@ public class FrmHotel extends javax.swing.JFrame {
         pnlInicio = new javax.swing.JPanel();
         pnlHuespedes = new javax.swing.JPanel();
         pnlHabitaciones = new javax.swing.JPanel();
-        pnlReservas = new javax.swing.JPanel();
-        pnlDisponibilidad = new javax.swing.JPanel();
+        panelReservas = new vista.PanelReservas();
+        panelDisponibilidad = new vista.PanelDisponibilidad();
         pnlCheckInCheckOut = new javax.swing.JPanel();
-        pnlSimulacion = new javax.swing.JPanel();
+        panelSimulacion = new vista.PanelSimulacion();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -94,7 +101,7 @@ public class FrmHotel extends javax.swing.JFrame {
         );
         pnlInicioLayout.setVerticalGroup(
             pnlInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 298, Short.MAX_VALUE)
+            .addGap(0, 639, Short.MAX_VALUE)
         );
 
         tabPrincipal.addTab("Inicio", pnlInicio);
@@ -107,7 +114,7 @@ public class FrmHotel extends javax.swing.JFrame {
         );
         pnlHuespedesLayout.setVerticalGroup(
             pnlHuespedesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 298, Short.MAX_VALUE)
+            .addGap(0, 639, Short.MAX_VALUE)
         );
 
         tabPrincipal.addTab("Huespedes", pnlHuespedes);
@@ -120,36 +127,12 @@ public class FrmHotel extends javax.swing.JFrame {
         );
         pnlHabitacionesLayout.setVerticalGroup(
             pnlHabitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 298, Short.MAX_VALUE)
+            .addGap(0, 639, Short.MAX_VALUE)
         );
 
         tabPrincipal.addTab("Habitaciones", pnlHabitaciones);
-
-        javax.swing.GroupLayout pnlReservasLayout = new javax.swing.GroupLayout(pnlReservas);
-        pnlReservas.setLayout(pnlReservasLayout);
-        pnlReservasLayout.setHorizontalGroup(
-            pnlReservasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 668, Short.MAX_VALUE)
-        );
-        pnlReservasLayout.setVerticalGroup(
-            pnlReservasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 298, Short.MAX_VALUE)
-        );
-
-        tabPrincipal.addTab("Reservas", pnlReservas);
-
-        javax.swing.GroupLayout pnlDisponibilidadLayout = new javax.swing.GroupLayout(pnlDisponibilidad);
-        pnlDisponibilidad.setLayout(pnlDisponibilidadLayout);
-        pnlDisponibilidadLayout.setHorizontalGroup(
-            pnlDisponibilidadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 668, Short.MAX_VALUE)
-        );
-        pnlDisponibilidadLayout.setVerticalGroup(
-            pnlDisponibilidadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 298, Short.MAX_VALUE)
-        );
-
-        tabPrincipal.addTab("Disponibilidad", pnlDisponibilidad);
+        tabPrincipal.addTab("Reservas", panelReservas);
+        tabPrincipal.addTab("Disponibilidad", panelDisponibilidad);
 
         javax.swing.GroupLayout pnlCheckInCheckOutLayout = new javax.swing.GroupLayout(pnlCheckInCheckOut);
         pnlCheckInCheckOut.setLayout(pnlCheckInCheckOutLayout);
@@ -159,23 +142,11 @@ public class FrmHotel extends javax.swing.JFrame {
         );
         pnlCheckInCheckOutLayout.setVerticalGroup(
             pnlCheckInCheckOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 298, Short.MAX_VALUE)
+            .addGap(0, 639, Short.MAX_VALUE)
         );
 
         tabPrincipal.addTab("Check-in / Check-out", pnlCheckInCheckOut);
-
-        javax.swing.GroupLayout pnlSimulacionLayout = new javax.swing.GroupLayout(pnlSimulacion);
-        pnlSimulacion.setLayout(pnlSimulacionLayout);
-        pnlSimulacionLayout.setHorizontalGroup(
-            pnlSimulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 668, Short.MAX_VALUE)
-        );
-        pnlSimulacionLayout.setVerticalGroup(
-            pnlSimulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 298, Short.MAX_VALUE)
-        );
-
-        tabPrincipal.addTab("Simulacion", pnlSimulacion);
+        tabPrincipal.addTab("Simulacion", panelSimulacion);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -183,10 +154,12 @@ public class FrmHotel extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(tabPrincipal)
-                    .addComponent(pnlEncabezado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(pnlEncabezado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(6, 6, 6))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(tabPrincipal)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -230,14 +203,14 @@ public class FrmHotel extends javax.swing.JFrame {
     private javax.swing.JButton btnCambiarUsuario;
     private javax.swing.JLabel lblHotel;
     private javax.swing.JLabel lblRecepcionista;
+    private vista.PanelDisponibilidad panelDisponibilidad;
+    private vista.PanelReservas panelReservas;
+    private vista.PanelSimulacion panelSimulacion;
     private javax.swing.JPanel pnlCheckInCheckOut;
-    private javax.swing.JPanel pnlDisponibilidad;
     private javax.swing.JPanel pnlEncabezado;
     private javax.swing.JPanel pnlHabitaciones;
     private javax.swing.JPanel pnlHuespedes;
     private javax.swing.JPanel pnlInicio;
-    private javax.swing.JPanel pnlReservas;
-    private javax.swing.JPanel pnlSimulacion;
     private javax.swing.JTabbedPane tabPrincipal;
     // End of variables declaration//GEN-END:variables
 }
