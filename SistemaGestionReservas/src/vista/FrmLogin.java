@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package vista;
-
+import controlador.ControladorLogin;
 /**
  *
  * @author maria
@@ -187,7 +187,9 @@ public class FrmLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMensajeActionPerformed
 
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
-        // TODO add your handling code here:
+ControladorLogin controlador = new ControladorLogin(
+        this, txtUsuario, txtContrasena);
+controlador.iniciarSesion();
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
 
     private void txtContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContrasenaActionPerformed

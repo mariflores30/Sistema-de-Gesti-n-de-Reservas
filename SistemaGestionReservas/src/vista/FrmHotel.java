@@ -17,6 +17,8 @@ public class FrmHotel extends javax.swing.JFrame {
      */
     public FrmHotel() {
         initComponents();
+         pnlInicio.setLayout(new java.awt.BorderLayout());
+    pnlInicio.add(new PanelInicio(), java.awt.BorderLayout.CENTER);
     }
     public javax.swing.JButton getBtnCambiarUsuario() {
     return btnCambiarUsuario;
@@ -49,6 +51,7 @@ public class FrmHotel extends javax.swing.JFrame {
         panelSimulacion = new vista.PanelSimulacion();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Gestión Hotelera - Hotel");
 
         pnlEncabezado.setBackground(new java.awt.Color(0, 0, 128));
         pnlEncabezado.setBorder(new javax.swing.border.MatteBorder(null));
