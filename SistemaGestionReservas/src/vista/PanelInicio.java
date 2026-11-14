@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package vista;
-
+import modelo.GestorHotel;
+import java.text.NumberFormat;
+import java.util.Locale;
 /**
  *
  * @author maria
@@ -13,9 +15,46 @@ public class PanelInicio extends javax.swing.JPanel {
     /**
      * Creates new form PanelInicio
      */
+    private GestorHotel gestor;
     public PanelInicio() {
         initComponents();
+        
+    gestor = GestorHotel.getInstancia();
+
+    actualizarIndicadores();
     }
+    public void actualizarIndicadores() {
+
+    lblCantidadHabitaciones.setText(
+            String.valueOf(gestor.getTotalHabitaciones()));
+
+    lblCantidadOcupadas.setText(
+            String.valueOf(gestor.getHabitacionesOcupadasActualmente()));
+
+    lblCantidadDisponibles.setText(
+            String.valueOf(gestor.getHabitacionesNoOcupadasActualmente()));
+
+    lblCantidadReservasConfirmadas.setText(
+            String.valueOf(gestor.getCantidadReservasConfirmadas()));
+
+    lblCantidadVencidas.setText(
+            String.valueOf(gestor.getCantidadReservasVencidas()));
+
+    long ingresos = gestor.calcularIngresosEsperados(
+            gestor.getReservas());
+
+    lblCantidadIngresos.setText("₡" + ingresos);
+}
+    public void mostrarIndicadores(int total, int ocupadas,
+        int disponibles, int confirmadas, int vencidas, long ingresos) {
+
+    lblCantidadHabitaciones.setText(String.valueOf(total));
+    lblCantidadOcupadas.setText(String.valueOf(ocupadas));
+    lblCantidadDisponibles.setText(String.valueOf(disponibles));
+    lblCantidadReservasConfirmadas.setText(String.valueOf(confirmadas));
+    lblCantidadVencidas.setText(String.valueOf(vencidas));
+    lblCantidadIngresos.setText("₡" + ingresos);
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,23 +71,23 @@ public class PanelInicio extends javax.swing.JPanel {
         pnlTotalHabitaciones = new javax.swing.JPanel();
         lblHabitaciones = new javax.swing.JLabel();
         lblIcono = new javax.swing.JLabel();
-        lblCantidad = new javax.swing.JLabel();
+        lblCantidadHabitaciones = new javax.swing.JLabel();
         pnlDisponibles = new javax.swing.JPanel();
         lblIconoDisponibles = new javax.swing.JLabel();
         lblDisponibles = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lblCantidadDisponibles = new javax.swing.JLabel();
         pnlOcupadas = new javax.swing.JPanel();
         lblIconoOcupadas = new javax.swing.JLabel();
         lblOcupadas = new javax.swing.JLabel();
         lblCantidadOcupadas = new javax.swing.JLabel();
         pnlReservasConfirmadas = new javax.swing.JPanel();
-        lblCantidadDisponibles = new javax.swing.JLabel();
+        lblCantidadReservasConfirmadas = new javax.swing.JLabel();
         lblHabitaciones1 = new javax.swing.JLabel();
         lblIconoReservas = new javax.swing.JLabel();
         pnlIngresos = new javax.swing.JPanel();
         lblIconoIngresos = new javax.swing.JLabel();
         lblIngresos = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        lblCantidadIngresos = new javax.swing.JLabel();
         pnlReservas = new javax.swing.JPanel();
         lblIconoVencidas = new javax.swing.JLabel();
         lblVencidas = new javax.swing.JLabel();
@@ -97,7 +136,7 @@ public class PanelInicio extends javax.swing.JPanel {
                 .addContainerGap(11, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTotalHabitacionesLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblCantidad)
+                .addComponent(lblCantidadHabitaciones)
                 .addGap(47, 47, 47))
         );
         pnlTotalHabitacionesLayout.setVerticalGroup(
@@ -108,7 +147,7 @@ public class PanelInicio extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblHabitaciones)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblCantidad)
+                .addComponent(lblCantidadHabitaciones)
                 .addGap(0, 26, Short.MAX_VALUE))
         );
 
@@ -127,7 +166,7 @@ public class PanelInicio extends javax.swing.JPanel {
             pnlDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDisponiblesLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
+                .addComponent(lblCantidadDisponibles)
                 .addGap(49, 49, 49))
             .addGroup(pnlDisponiblesLayout.createSequentialGroup()
                 .addGroup(pnlDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,7 +185,7 @@ public class PanelInicio extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblDisponibles, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
+                .addComponent(lblCantidadDisponibles)
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
@@ -203,7 +242,7 @@ public class PanelInicio extends javax.swing.JPanel {
                 .addGroup(pnlReservasConfirmadasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlReservasConfirmadasLayout.createSequentialGroup()
                         .addGap(54, 54, 54)
-                        .addComponent(lblCantidadDisponibles))
+                        .addComponent(lblCantidadReservasConfirmadas))
                     .addGroup(pnlReservasConfirmadasLayout.createSequentialGroup()
                         .addGap(65, 65, 65)
                         .addComponent(lblIconoReservas))
@@ -218,7 +257,7 @@ public class PanelInicio extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblHabitaciones1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblCantidadDisponibles)
+                .addComponent(lblCantidadReservasConfirmadas)
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
@@ -241,7 +280,7 @@ public class PanelInicio extends javax.swing.JPanel {
                 .addGroup(pnlIngresosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlIngresosLayout.createSequentialGroup()
                         .addGap(100, 100, 100)
-                        .addComponent(jLabel1))
+                        .addComponent(lblCantidadIngresos))
                     .addGroup(pnlIngresosLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblIngresos)))
@@ -256,7 +295,7 @@ public class PanelInicio extends javax.swing.JPanel {
                     .addGroup(pnlIngresosLayout.createSequentialGroup()
                         .addComponent(lblIngresos)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel1)))
+                        .addComponent(lblCantidadIngresos)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -288,9 +327,9 @@ public class PanelInicio extends javax.swing.JPanel {
             pnlReservasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlReservasLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addGroup(pnlReservasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlReservasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblVencidas)
-                    .addComponent(lblIconoVencidas))
+                    .addComponent(lblIconoVencidas, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblCantidadVencidas)
                 .addContainerGap(38, Short.MAX_VALUE))
@@ -399,7 +438,7 @@ public class PanelInicio extends javax.swing.JPanel {
                     .addGroup(pnlProcesosLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(12, Short.MAX_VALUE))))
             .addGroup(pnlProcesosLayout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(btnEjecutar)
@@ -494,15 +533,15 @@ public class PanelInicio extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEjecutar;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextInformacion;
     private javax.swing.JTextArea jTextMensajes;
-    private javax.swing.JLabel lblCantidad;
     private javax.swing.JLabel lblCantidadDisponibles;
+    private javax.swing.JLabel lblCantidadHabitaciones;
+    private javax.swing.JLabel lblCantidadIngresos;
     private javax.swing.JLabel lblCantidadOcupadas;
+    private javax.swing.JLabel lblCantidadReservasConfirmadas;
     private javax.swing.JLabel lblCantidadVencidas;
     private javax.swing.JLabel lblDisponibles;
     private javax.swing.JLabel lblHabitaciones;

@@ -17,6 +17,8 @@ public class FrmHotel extends javax.swing.JFrame {
      */
     public FrmHotel() {
         initComponents();
+        setSize(1300, 850);
+    setLocationRelativeTo(null);
          pnlInicio.setLayout(new java.awt.BorderLayout());
     pnlInicio.add(new PanelInicio(), java.awt.BorderLayout.CENTER);
     }
