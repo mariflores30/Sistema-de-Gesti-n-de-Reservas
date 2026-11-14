@@ -38,7 +38,6 @@ public class SupervisorReservas implements Runnable {
                 }
             }
         }
-
         System.out.println("SupervisorReservas: Finaliza ejecucion.");
     }
 }
