@@ -29,14 +29,14 @@ public class GestorHotel {
         recepcionistaActivo = null;
     }
 
-    public static GestorHotel getInstancia() {
+  public static synchronized GestorHotel getInstancia() {
 
-        if (instancia == null) {
-            instancia = new GestorHotel();
-        }
-
-        return instancia;
+    if (instancia == null) {
+        instancia = new GestorHotel();
     }
+
+    return instancia;
+}
 
     public synchronized boolean iniciarSesion(String usuario, String contrasena) {
 
