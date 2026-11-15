@@ -26,19 +26,304 @@ public class PanelCheckInCheckOut extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        lblEncabezado = new javax.swing.JLabel();
+        pnlDatosReserva = new javax.swing.JPanel();
+        lblCheckinCheckout = new javax.swing.JLabel();
+        lblCodigoReserva = new javax.swing.JLabel();
+        txtCodigoReserva = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        pnlDetalleReserva = new javax.swing.JPanel();
+        lblTituloDetalle = new javax.swing.JLabel();
+        lblHuesped = new javax.swing.JLabel();
+        lblHabitacion = new javax.swing.JLabel();
+        lblNombreHuesped = new javax.swing.JLabel();
+        lblNombreHabitacion = new javax.swing.JLabel();
+        lblEntrada = new javax.swing.JLabel();
+        lblFechaEntrada = new javax.swing.JLabel();
+        lblSalida = new javax.swing.JLabel();
+        lblFechaSalida = new javax.swing.JLabel();
+        lblEstado = new javax.swing.JLabel();
+        lblEstadoActual = new javax.swing.JLabel();
+        rdbCheckIn = new javax.swing.JRadioButton();
+        lblTransicionCheckIn = new javax.swing.JLabel();
+        rdbCheckOut = new javax.swing.JRadioButton();
+        lblTransicionCheckOut = new javax.swing.JLabel();
+        btnProcesar = new javax.swing.JButton();
+
+        setPreferredSize(new java.awt.Dimension(593, 597));
+
+        lblEncabezado.setBackground(new java.awt.Color(0, 23, 75));
+        lblEncabezado.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        lblEncabezado.setText("  Check-in / Check-out");
+        lblEncabezado.setOpaque(true);
+
+        pnlDatosReserva.setBackground(new java.awt.Color(255, 255, 255));
+        pnlDatosReserva.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 179, 236)));
+        pnlDatosReserva.setForeground(new java.awt.Color(232, 242, 252));
+
+        lblCheckinCheckout.setBackground(new java.awt.Color(215, 233, 250));
+        lblCheckinCheckout.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lblCheckinCheckout.setForeground(new java.awt.Color(0, 0, 51));
+        lblCheckinCheckout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/check_in.png"))); // NOI18N
+        lblCheckinCheckout.setText("Check-in / Check-out");
+        lblCheckinCheckout.setOpaque(true);
+
+        lblCodigoReserva.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        lblCodigoReserva.setForeground(new java.awt.Color(0, 0, 51));
+        lblCodigoReserva.setText("Código de reserva:");
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/buscar.png"))); // NOI18N
+
+        pnlDetalleReserva.setBackground(new java.awt.Color(234, 244, 252));
+        pnlDetalleReserva.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(183, 211, 235)));
+        pnlDetalleReserva.setForeground(new java.awt.Color(183, 211, 235));
+
+        lblTituloDetalle.setBackground(new java.awt.Color(185, 217, 245));
+        lblTituloDetalle.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        lblTituloDetalle.setForeground(new java.awt.Color(7, 26, 80));
+        lblTituloDetalle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/checklist.png"))); // NOI18N
+        lblTituloDetalle.setText("Detalle de la reserva");
+        lblTituloDetalle.setOpaque(true);
+
+        lblHuesped.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        lblHuesped.setForeground(new java.awt.Color(0, 0, 51));
+        lblHuesped.setText("Huésped:");
+
+        lblHabitacion.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        lblHabitacion.setForeground(new java.awt.Color(0, 0, 51));
+        lblHabitacion.setText("Habitación:");
+
+        lblNombreHuesped.setBackground(new java.awt.Color(183, 211, 235));
+        lblNombreHuesped.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        lblNombreHuesped.setForeground(new java.awt.Color(0, 0, 0));
+
+        lblNombreHabitacion.setBackground(new java.awt.Color(183, 211, 235));
+        lblNombreHabitacion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        lblNombreHabitacion.setForeground(new java.awt.Color(0, 0, 0));
+
+        lblEntrada.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        lblEntrada.setForeground(new java.awt.Color(0, 0, 51));
+        lblEntrada.setText("Entrada programada:");
+
+        lblFechaEntrada.setBackground(new java.awt.Color(183, 211, 235));
+        lblFechaEntrada.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        lblFechaEntrada.setForeground(new java.awt.Color(0, 0, 0));
+
+        lblSalida.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        lblSalida.setForeground(new java.awt.Color(0, 0, 51));
+        lblSalida.setText("Salida programada:");
+
+        lblFechaSalida.setBackground(new java.awt.Color(183, 211, 235));
+        lblFechaSalida.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        lblFechaSalida.setForeground(new java.awt.Color(0, 0, 0));
+
+        lblEstado.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        lblEstado.setForeground(new java.awt.Color(0, 0, 51));
+        lblEstado.setText("Estado actual:");
+
+        lblEstadoActual.setBackground(new java.awt.Color(190, 245, 170));
+        lblEstadoActual.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        lblEstadoActual.setForeground(new java.awt.Color(20, 80, 20));
+        lblEstadoActual.setOpaque(true);
+
+        javax.swing.GroupLayout pnlDetalleReservaLayout = new javax.swing.GroupLayout(pnlDetalleReserva);
+        pnlDetalleReserva.setLayout(pnlDetalleReservaLayout);
+        pnlDetalleReservaLayout.setHorizontalGroup(
+            pnlDetalleReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblTituloDetalle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(pnlDetalleReservaLayout.createSequentialGroup()
+                .addGroup(pnlDetalleReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlDetalleReservaLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(pnlDetalleReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(pnlDetalleReservaLayout.createSequentialGroup()
+                                .addComponent(lblEntrada)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblFechaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlDetalleReservaLayout.createSequentialGroup()
+                                .addGroup(pnlDetalleReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblHabitacion)
+                                    .addComponent(lblHuesped, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(32, 32, 32)
+                                .addGroup(pnlDetalleReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(pnlDetalleReservaLayout.createSequentialGroup()
+                                        .addGap(7, 7, 7)
+                                        .addComponent(lblNombreHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(lblNombreHuesped, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(pnlDetalleReservaLayout.createSequentialGroup()
+                        .addGroup(pnlDetalleReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlDetalleReservaLayout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(lblSalida))
+                            .addGroup(pnlDetalleReservaLayout.createSequentialGroup()
+                                .addGap(28, 28, 28)
+                                .addComponent(lblEstado)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlDetalleReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblEstadoActual, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblFechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlDetalleReservaLayout.setVerticalGroup(
+            pnlDetalleReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDetalleReservaLayout.createSequentialGroup()
+                .addComponent(lblTituloDetalle, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlDetalleReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlDetalleReservaLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(lblHuesped, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(pnlDetalleReservaLayout.createSequentialGroup()
+                        .addComponent(lblNombreHuesped, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblNombreHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlDetalleReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblFechaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlDetalleReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblFechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlDetalleReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblEstadoActual, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 41, Short.MAX_VALUE))
+        );
+
+        buttonGroup1.add(rdbCheckIn);
+        rdbCheckIn.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        rdbCheckIn.setForeground(new java.awt.Color(0, 0, 0));
+        rdbCheckIn.setText("Realizar Check-in");
+
+        lblTransicionCheckIn.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        lblTransicionCheckIn.setForeground(new java.awt.Color(20, 20, 20));
+        lblTransicionCheckIn.setText("(Confirmada → Hospedado)");
+
+        buttonGroup1.add(rdbCheckOut);
+        rdbCheckOut.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        rdbCheckOut.setForeground(new java.awt.Color(0, 0, 0));
+        rdbCheckOut.setText("Realizar Check-out");
+        rdbCheckOut.addActionListener(this::rdbCheckOutActionPerformed);
+
+        lblTransicionCheckOut.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        lblTransicionCheckOut.setForeground(new java.awt.Color(20, 20, 20));
+        lblTransicionCheckOut.setText("(Hospedado → Finalizada)");
+
+        btnProcesar.setBackground(new java.awt.Color(18, 100, 190));
+        btnProcesar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/check_procesar_32px.png"))); // NOI18N
+        btnProcesar.setText("Procesar");
+        btnProcesar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        javax.swing.GroupLayout pnlDatosReservaLayout = new javax.swing.GroupLayout(pnlDatosReserva);
+        pnlDatosReserva.setLayout(pnlDatosReservaLayout);
+        pnlDatosReservaLayout.setHorizontalGroup(
+            pnlDatosReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblCheckinCheckout, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlDetalleReserva, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(pnlDatosReservaLayout.createSequentialGroup()
+                .addGroup(pnlDatosReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlDatosReservaLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(lblCodigoReserva)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtCodigoReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1))
+                    .addGroup(pnlDatosReservaLayout.createSequentialGroup()
+                        .addGap(73, 73, 73)
+                        .addGroup(pnlDatosReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rdbCheckIn)
+                            .addComponent(rdbCheckOut))
+                        .addGroup(pnlDatosReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlDatosReservaLayout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addComponent(lblTransicionCheckIn))
+                            .addGroup(pnlDatosReservaLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(lblTransicionCheckOut)))))
+                .addContainerGap(73, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDatosReservaLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnProcesar, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(134, 134, 134))
+        );
+        pnlDatosReservaLayout.setVerticalGroup(
+            pnlDatosReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDatosReservaLayout.createSequentialGroup()
+                .addGroup(pnlDatosReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1)
+                    .addGroup(pnlDatosReservaLayout.createSequentialGroup()
+                        .addComponent(lblCheckinCheckout, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlDatosReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtCodigoReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblCodigoReserva))))
+                .addGap(18, 18, 18)
+                .addComponent(pnlDetalleReserva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(pnlDatosReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rdbCheckIn)
+                    .addComponent(lblTransicionCheckIn))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlDatosReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rdbCheckOut)
+                    .addComponent(lblTransicionCheckOut))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnProcesar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(12, 12, 12))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(lblEncabezado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlDatosReserva, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(lblEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlDatosReserva, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void rdbCheckOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbCheckOutActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rdbCheckOutActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnProcesar;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel lblCheckinCheckout;
+    private javax.swing.JLabel lblCodigoReserva;
+    private javax.swing.JLabel lblEncabezado;
+    private javax.swing.JLabel lblEntrada;
+    private javax.swing.JLabel lblEstado;
+    private javax.swing.JLabel lblEstadoActual;
+    private javax.swing.JLabel lblFechaEntrada;
+    private javax.swing.JLabel lblFechaSalida;
+    private javax.swing.JLabel lblHabitacion;
+    private javax.swing.JLabel lblHuesped;
+    private javax.swing.JLabel lblNombreHabitacion;
+    private javax.swing.JLabel lblNombreHuesped;
+    private javax.swing.JLabel lblSalida;
+    private javax.swing.JLabel lblTituloDetalle;
+    private javax.swing.JLabel lblTransicionCheckIn;
+    private javax.swing.JLabel lblTransicionCheckOut;
+    private javax.swing.JPanel pnlDatosReserva;
+    private javax.swing.JPanel pnlDetalleReserva;
+    private javax.swing.JRadioButton rdbCheckIn;
+    private javax.swing.JRadioButton rdbCheckOut;
+    private javax.swing.JTextField txtCodigoReserva;
     // End of variables declaration//GEN-END:variables
 }
