@@ -20,7 +20,7 @@ public class PanelHuespedes extends javax.swing.JPanel {
     tblHuespedes.getTableHeader().setForeground(
         new java.awt.Color(0, 0, 51));
     tblHuespedes.getTableHeader().setOpaque(true);
-   
+  
     new ControladorHuespedes(txtIdentificacion,txtNombre,txtTelefono,txtCorreo,tblHuespedes,btnRegistrar,btnLimpiar);
     }
 
@@ -33,6 +33,7 @@ public class PanelHuespedes extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jSeparator1 = new javax.swing.JSeparator();
         pnlEncabezado = new javax.swing.JPanel();
         lblEncabezado = new javax.swing.JLabel();
         pnlDatosHuesped = new javax.swing.JPanel();
@@ -41,7 +42,7 @@ public class PanelHuespedes extends javax.swing.JPanel {
         lblNombreCompleto = new javax.swing.JLabel();
         lblTelefono = new javax.swing.JLabel();
         txtIdentificacion = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        lblCorreo = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
         txtCorreo = new javax.swing.JTextField();
         txtTelefono = new javax.swing.JTextField();
@@ -55,7 +56,7 @@ public class PanelHuespedes extends javax.swing.JPanel {
         lblEncabezado.setBackground(new java.awt.Color(0, 23, 75));
         lblEncabezado.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblEncabezado.setForeground(new java.awt.Color(255, 255, 255));
-        lblEncabezado.setText("                                         Registro de huespedes ");
+        lblEncabezado.setText("Registro de huespedes ");
         lblEncabezado.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         lblEncabezado.setOpaque(true);
 
@@ -72,7 +73,7 @@ public class PanelHuespedes extends javax.swing.JPanel {
 
         lblIdentificacion.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
         lblIdentificacion.setForeground(new java.awt.Color(0, 0, 51));
-        lblIdentificacion.setText("Indetificacion:");
+        lblIdentificacion.setText("Identificación");
 
         lblNombreCompleto.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
         lblNombreCompleto.setForeground(new java.awt.Color(0, 0, 51));
@@ -82,9 +83,9 @@ public class PanelHuespedes extends javax.swing.JPanel {
         lblTelefono.setForeground(new java.awt.Color(0, 0, 51));
         lblTelefono.setText("Teléfono:");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel1.setText("correo electrónico:");
+        lblCorreo.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
+        lblCorreo.setForeground(new java.awt.Color(0, 0, 51));
+        lblCorreo.setText("correo electrónico:");
 
         txtNombre.addActionListener(this::txtNombreActionPerformed);
 
@@ -104,7 +105,7 @@ public class PanelHuespedes extends javax.swing.JPanel {
                     .addGroup(pnlDatosHuespedLayout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addGroup(pnlDatosHuespedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
+                            .addComponent(lblCorreo)
                             .addComponent(lblNombreCompleto)
                             .addGroup(pnlDatosHuespedLayout.createSequentialGroup()
                                 .addComponent(lblIdentificacion)
@@ -140,7 +141,7 @@ public class PanelHuespedes extends javax.swing.JPanel {
                     .addGroup(pnlDatosHuespedLayout.createSequentialGroup()
                         .addComponent(lblTelefono)
                         .addGap(14, 14, 14)
-                        .addComponent(jLabel1))
+                        .addComponent(lblCorreo))
                     .addGroup(pnlDatosHuespedLayout.createSequentialGroup()
                         .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -176,6 +177,7 @@ public class PanelHuespedes extends javax.swing.JPanel {
         btnRegistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/huespedes.png"))); // NOI18N
         btnRegistrar.setText("Registrar");
         btnRegistrar.setOpaque(true);
+        btnRegistrar.addActionListener(this::btnRegistrarActionPerformed);
 
         javax.swing.GroupLayout pnlEncabezadoLayout = new javax.swing.GroupLayout(pnlEncabezado);
         pnlEncabezado.setLayout(pnlEncabezadoLayout);
@@ -184,16 +186,18 @@ public class PanelHuespedes extends javax.swing.JPanel {
             .addGroup(pnlEncabezadoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnlDatosHuesped, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblEncabezado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ScrollHuespedes, javax.swing.GroupLayout.DEFAULT_SIZE, 572, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEncabezadoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(142, 142, 142))
+                    .addGroup(pnlEncabezadoLayout.createSequentialGroup()
+                        .addGroup(pnlEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pnlDatosHuesped, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblEncabezado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ScrollHuespedes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 581, Short.MAX_VALUE))
+                        .addContainerGap())
+                    .addGroup(pnlEncabezadoLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         pnlEncabezadoLayout.setVerticalGroup(
             pnlEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -202,13 +206,13 @@ public class PanelHuespedes extends javax.swing.JPanel {
                 .addComponent(lblEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(pnlDatosHuesped, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnLimpiar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
+                    .addComponent(btnLimpiar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ScrollHuespedes, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(18, 18, 18))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -219,7 +223,7 @@ public class PanelHuespedes extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnlEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -235,12 +239,17 @@ public class PanelHuespedes extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTelefonoActionPerformed
 
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegistrarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane ScrollHuespedes;
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnRegistrar;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lblCorreo;
     private javax.swing.JLabel lblEncabezado;
     private javax.swing.JLabel lblIdentificacion;
     private javax.swing.JLabel lblNombreCompleto;

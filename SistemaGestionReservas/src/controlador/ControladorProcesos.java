@@ -11,6 +11,7 @@ import javax.swing.JButton;
  * @author maria
  */
 public class ControladorProcesos {
+
     private GestorHotel gestor;
     private PanelInicio vista;
     private JButton btnEjecutar;
@@ -18,19 +19,16 @@ public class ControladorProcesos {
 
     public ControladorProcesos(GestorHotel gestor,
             PanelInicio vista, JButton btnEjecutar) {
-
         this.gestor = gestor;
         this.vista = vista;
         this.btnEjecutar = btnEjecutar;
         procesosActivos = false;
     }
-
     public void ejecutarProcesos() {
 
         if (procesosActivos) {
             return;
         }
-
         procesosActivos = true;
         btnEjecutar.setEnabled(false);
 
@@ -44,18 +42,13 @@ public class ControladorProcesos {
                 "ActualizadorIndicadores");
 
         System.out.println("Iniciando procesos concurrentes.");
-
         hiloSupervisor.start();
         hiloIndicadores.start();
     }
-
     public void finalizarProcesos() {
-
         vista.actualizarIndicadores();
-
         btnEjecutar.setEnabled(true);
         procesosActivos = false;
-
         System.out.println("Ambos procesos finalizaron.");
     }
 }

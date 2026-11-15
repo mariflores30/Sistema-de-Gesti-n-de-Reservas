@@ -9,36 +9,31 @@ import modelo.GestorHotel;
  * @author maria
  */
 public class SupervisorReservas implements Runnable {
-
     private GestorHotel gestor;
-
     public SupervisorReservas(GestorHotel gestor) {
         this.gestor = gestor;
     }
-
     @Override
     public void run() {
-
-        System.out.println("SupervisorReservas: Inicia ejecucion.");
-
+        String nombreHilo = Thread.currentThread().getName();
+        System.out.println(nombreHilo + ": Inicia ejecucion.");
         for (int i = 1; i <= 5; i++) {
-
             int cantidad = gestor.actualizarReservasVencidas();
-
-            System.out.println("SupervisorReservas: Ciclo " + i
-                    + ". Reservas actualizadas: " + cantidad);
+            System.out.println(nombreHilo + ": Ciclo " + i
+                    + " de 5. Reservas actualizadas: " + cantidad);
 
             if (i < 5) {
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
-                    System.out.println("SupervisorReservas interrumpido.");
+
+                    System.out.println(nombreHilo
+                            + ": Ejecucion interrumpida.");
                     Thread.currentThread().interrupt();
                     break;
                 }
             }
         }
-        System.out.println("SupervisorReservas: Finaliza ejecucion.");
+        System.out.println(nombreHilo + ": Finaliza ejecucion.");
     }
 }
-

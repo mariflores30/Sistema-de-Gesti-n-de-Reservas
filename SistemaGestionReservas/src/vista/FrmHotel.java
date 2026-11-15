@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package vista;
-
+import java.awt.BorderLayout;
 /**
  *
  * @author UTN
@@ -17,10 +17,12 @@ public class FrmHotel extends javax.swing.JFrame {
      */
     public FrmHotel() {
         initComponents();
-        setSize(1300, 850);
+    setSize(1050, 850);
     setLocationRelativeTo(null);
          pnlInicio.setLayout(new java.awt.BorderLayout());
     pnlInicio.add(new PanelInicio(), java.awt.BorderLayout.CENTER);
+    pnlHuespedes.setLayout(new BorderLayout());
+pnlHuespedes.add(new PanelHuespedes(), BorderLayout.CENTER);
     }
     public javax.swing.JButton getBtnCambiarUsuario() {
     return btnCambiarUsuario;
@@ -54,6 +56,7 @@ public class FrmHotel extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gestión Hotelera - Hotel");
+        setBackground(new java.awt.Color(255, 255, 255));
 
         pnlEncabezado.setBackground(new java.awt.Color(0, 0, 128));
         pnlEncabezado.setBorder(new javax.swing.border.MatteBorder(null));
@@ -80,7 +83,7 @@ public class FrmHotel extends javax.swing.JFrame {
                 .addComponent(lblHotel)
                 .addGap(138, 138, 138)
                 .addComponent(lblRecepcionista)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 386, Short.MAX_VALUE)
                 .addComponent(btnCambiarUsuario)
                 .addGap(51, 51, 51))
         );
@@ -96,17 +99,21 @@ public class FrmHotel extends javax.swing.JFrame {
                 .addContainerGap(56, Short.MAX_VALUE))
         );
 
+        tabPrincipal.setBackground(new java.awt.Color(255, 255, 255));
+        tabPrincipal.setForeground(new java.awt.Color(0, 0, 51));
         tabPrincipal.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+
+        pnlInicio.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout pnlInicioLayout = new javax.swing.GroupLayout(pnlInicio);
         pnlInicio.setLayout(pnlInicioLayout);
         pnlInicioLayout.setHorizontalGroup(
             pnlInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 668, Short.MAX_VALUE)
+            .addGap(0, 917, Short.MAX_VALUE)
         );
         pnlInicioLayout.setVerticalGroup(
             pnlInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 639, Short.MAX_VALUE)
+            .addGap(0, 459, Short.MAX_VALUE)
         );
 
         tabPrincipal.addTab("Inicio", pnlInicio);
@@ -115,11 +122,11 @@ public class FrmHotel extends javax.swing.JFrame {
         pnlHuespedes.setLayout(pnlHuespedesLayout);
         pnlHuespedesLayout.setHorizontalGroup(
             pnlHuespedesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 668, Short.MAX_VALUE)
+            .addGap(0, 917, Short.MAX_VALUE)
         );
         pnlHuespedesLayout.setVerticalGroup(
             pnlHuespedesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 639, Short.MAX_VALUE)
+            .addGap(0, 459, Short.MAX_VALUE)
         );
 
         tabPrincipal.addTab("Huespedes", pnlHuespedes);
@@ -128,11 +135,11 @@ public class FrmHotel extends javax.swing.JFrame {
         pnlHabitaciones.setLayout(pnlHabitacionesLayout);
         pnlHabitacionesLayout.setHorizontalGroup(
             pnlHabitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 668, Short.MAX_VALUE)
+            .addGap(0, 917, Short.MAX_VALUE)
         );
         pnlHabitacionesLayout.setVerticalGroup(
             pnlHabitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 639, Short.MAX_VALUE)
+            .addGap(0, 459, Short.MAX_VALUE)
         );
 
         tabPrincipal.addTab("Habitaciones", pnlHabitaciones);
@@ -143,11 +150,11 @@ public class FrmHotel extends javax.swing.JFrame {
         pnlCheckInCheckOut.setLayout(pnlCheckInCheckOutLayout);
         pnlCheckInCheckOutLayout.setHorizontalGroup(
             pnlCheckInCheckOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 668, Short.MAX_VALUE)
+            .addGap(0, 917, Short.MAX_VALUE)
         );
         pnlCheckInCheckOutLayout.setVerticalGroup(
             pnlCheckInCheckOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 639, Short.MAX_VALUE)
+            .addGap(0, 459, Short.MAX_VALUE)
         );
 
         tabPrincipal.addTab("Check-in / Check-out", pnlCheckInCheckOut);
@@ -161,7 +168,7 @@ public class FrmHotel extends javax.swing.JFrame {
                 .addGap(6, 6, 6)
                 .addComponent(pnlEncabezado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(6, 6, 6))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(tabPrincipal)
                 .addContainerGap())
@@ -172,8 +179,7 @@ public class FrmHotel extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(pnlEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(tabPrincipal)
-                .addContainerGap())
+                .addComponent(tabPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 494, Short.MAX_VALUE))
         );
 
         pack();
