@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package vista;
-import controlador.ControladorHuespedes;
+import controlador.ControladorHabitaciones;
 /**
  *
  * @author maria
@@ -21,7 +21,8 @@ public class PanelHabitaciones extends javax.swing.JPanel {
         new java.awt.Color(0, 0, 51));
     tblHabitaciones.getTableHeader().setOpaque(true);
   
-    new ControladorHuespedes(txtNumero,txtNombre,txtCapacidad,txtTarifa,tblHabitaciones,btnRegistrar,btnLimpiar);
+    new ControladorHabitaciones(txtNumero,cmbTipo,txtCapacidad,txtTarifa,tblHabitaciones,btnRegistrar,btnLimpiar
+);
     }
 
     /**
@@ -91,7 +92,8 @@ public class PanelHabitaciones extends javax.swing.JPanel {
 
         txtCapacidad.addActionListener(this::txtCapacidadActionPerformed);
 
-        cmbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Individual", "Doble", "Familiar" }));
+        cmbTipo.addActionListener(this::cmbTipoActionPerformed);
 
         javax.swing.GroupLayout pnlDatosHabitacionesLayout = new javax.swing.GroupLayout(pnlDatosHabitaciones);
         pnlDatosHabitaciones.setLayout(pnlDatosHabitacionesLayout);
@@ -243,6 +245,10 @@ public class PanelHabitaciones extends javax.swing.JPanel {
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void cmbTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbTipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbTipoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
