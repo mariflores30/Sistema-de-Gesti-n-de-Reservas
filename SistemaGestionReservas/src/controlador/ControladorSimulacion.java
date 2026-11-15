@@ -8,6 +8,8 @@ import javax.swing.table.DefaultTableModel;
 import modelo.GestorHotel;
 import modelo.Reserva;
 import vista.PanelSimulacion;
+import java.time.format.DateTimeParseException;
+
 
 /**
  *
@@ -16,24 +18,24 @@ import vista.PanelSimulacion;
 public class ControladorSimulacion {
     
     private final PanelSimulacion vista;
-    private final GestorHotel gestor = GestorHotel.getInstancia();
+    private final GestorHotel gestor= GestorHotel.getInstancia();
 
-    public ControladorSimulacion(PanelSimulacion vista) {
+    public ControladorSimulacion(PanelSimulacion vista){
         this.vista = vista;
         vista.getBtnSimular().addActionListener(e -> simular());
     }
     
     private void simular(){
     try{
-     LocalDate fecha = LocalDate.parse(vista.getTxtFechaReferencia().getText().trim());
-     DefaultTableModel modelo = (DefaultTableModel) vista.getTblSimulacion().getModel();
-    modelo.setRowCount(0); //borra todas las filas de las tablas
+     LocalDate fecha= LocalDate.parse(vista.getTxtFechaReferencia().getText().trim());
+     DefaultTableModel modelo= (DefaultTableModel) vista.getTblSimulacion().getModel();
+     modelo.setRowCount(0); //borra todas las filas de las tablas
     
-    for (Reserva r: gestor.simularVencimientos(fecha)){
+    for(Reserva r: gestor.simularVencimientos(fecha)){
     modelo.addRow(new Object[]{r.getCodigo(), r.getHuesped().getNombreCompleto(),
      r.getFechaEntrada(), "Vencida"});
      }
-  }catch (RuntimeException ex) {
+  }catch(DateTimeParseException ex) {
     vista.mostrarMensaje("Escriba la fecha correctamente");
 }
 } 

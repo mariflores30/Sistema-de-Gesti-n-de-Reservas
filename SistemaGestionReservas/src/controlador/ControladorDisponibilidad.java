@@ -6,8 +6,10 @@ package controlador;
 
 import java.time.LocalDate;
 import modelo.GestorHotel;
+import java.util.ArrayList;
 import modelo.Habitacion;
 import vista.PanelDisponibilidad;
+import java.time.format.DateTimeParseException;
 
 
 /**
@@ -29,16 +31,16 @@ public class ControladorDisponibilidad {
         LocalDate fecha = LocalDate.parse(vista.getTxtFechaConsulta().getText().trim());
 
         //aquí la cantidad se calcula con el metodo recursivo del gestor
-        int cantidad = gestor.contarHabitacionesDisponibles(
-        gestor.getHabitaciones(), gestor.getReservas(), fecha);
-        vista.getLblCantidad().setText(String.valueOf(cantidad));
+        int cantidad = gestor.contarHabitacionesDisponibles(gestor.getHabitaciones(), gestor.getReservas(), fecha);
+        vista.getLblCantidad().setText("" + cantidad);
 
+        ArrayList<Habitacion> disponibles=gestor.obtenerHabitacionesDisponibles(fecha);
         String numeros= "";
-        for (Habitacion h:gestor.obtenerHabitacionesDisponibles(fecha)) {
-            numeros+= h.getNumero() + "  ";
+        for(int i=0; i< disponibles.size();i++){
+            numeros += disponibles.get(i).getNumero() + "  ";
         }
         vista.getTxaHabitaciones().setText(numeros);
-    } catch(RuntimeException ex){ //atrapa cualquier error mientras todo se ejecuta
+    } catch(DateTimeParseException ex){ //atrapa cualquier error mientras todo se ejecuta
         vista.mostrarMensaje("Escriba la fecha correctamente");
     }
     }

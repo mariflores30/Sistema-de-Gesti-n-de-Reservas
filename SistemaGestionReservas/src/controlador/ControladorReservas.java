@@ -51,28 +51,33 @@ public class ControladorReservas {
        vista.mostrarMensaje("Debe registrar un huesped y una habitacion");
         return;
         }
-        try{
+     
+     try{
         int personas= Integer.parseInt( vista.getTxtPersonas().getText().trim());
         LocalDate entrada= LocalDate.parse(vista.getTxtFechaEntrada().getText().trim());
         LocalDate salida= LocalDate.parse(vista.getTxtFechaSalida().getText().trim());
         
         String identificacion= gestor.getHuespedes().get(posHuesped).getIdentificacion();
         String numeroHabitacion= gestor.getHabitaciones().get(posHabitacion).getNumero();
-        String resultado= gestor.registrarReserva(identificacion, numeroHabitacion,personas, entrada, salida);
-        vista.mostrarMensaje(resultado);
         
-         if(resultado.startsWith("Reserva registrada")) {
+        int reservasAntes= gestor.getReservas().size();
+        String resultado= gestor.registrarReserva(identificacion, numeroHabitacion, personas, entrada, salida);
+        vista.mostrarMensaje(resultado);
+
+        if(gestor.getReservas().size() >reservasAntes){
             vista.limpiarCampos();
             actualizarTabla();
-          }
+        }
+        
         }catch(NumberFormatException ex) {
-            vista.mostrarMensaje( "error: La cantidad de personas debe ser un numero entero");
+            vista.mostrarMensaje("error: La cantidad de personas debe ser un numero entero");
+            
         } catch (DateTimeParseException ex) {
             vista.mostrarMensaje("escriba correctamente la fecha");
         }
     }
 
-    public void actualizarTabla() {
+    public void actualizarTabla(){
         DefaultTableModel modelo=(DefaultTableModel) vista.getTblReservas().getModel();
         modelo.setRowCount(0);
         for(Reserva r: gestor.getReservas()){
