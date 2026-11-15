@@ -32,6 +32,7 @@ private GestorHotel gestor;
         String contrasena = new String(txtContrasena.getPassword());
         if (gestor.iniciarSesion(usuario, contrasena)) {
             FrmHotel ventana = new FrmHotel();
+            ventana.setRecepcionista(gestor.getRecepcionistaActivo());
             ventana.setVisible(true);
             vista.dispose();
         } else {
