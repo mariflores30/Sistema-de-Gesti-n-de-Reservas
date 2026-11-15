@@ -17,23 +17,33 @@ public class FrmLogin extends javax.swing.JFrame {
      */
     public FrmLogin() {
         initComponents();
-         btnMensaje.setVisible(false);
-    }
-    public javax.swing.JTextField getTxtUsuario() {
-        return txtUsuario;
-    }
+       btnMensaje.setText("");
+    btnMensaje.setVisible(false);
+    btnMensaje.setFocusable(false);
+}
 
-    public javax.swing.JPasswordField getTxtContrasena() {
-        return txtContrasena;
-    }
+public javax.swing.JTextField getTxtUsuario() {
+    return txtUsuario;
+}
 
-    public javax.swing.JButton getBtnIniciarSesion() {
-        return btnIniciarSesion;
-    }
+public javax.swing.JPasswordField getTxtContrasena() {
+    return txtContrasena;
+}
 
-    public void mostrarMensaje(String mensaje) {
-        javax.swing.JOptionPane.showMessageDialog(this, mensaje);
-    }
+public javax.swing.JButton getBtnIniciarSesion() {
+    return btnIniciarSesion;
+}
+
+public void mostrarMensaje(String mensaje) {
+    btnMensaje.setText(mensaje);
+    btnMensaje.setVisible(true);
+}
+
+public void limpiarMensaje() {
+    btnMensaje.setText("");
+    btnMensaje.setVisible(false);
+}
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -97,7 +107,7 @@ public class FrmLogin extends javax.swing.JFrame {
 
         btnIniciarSesion.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         btnIniciarSesion.setForeground(new java.awt.Color(0, 0, 51));
-        btnIniciarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/icono_usuario_24x24.png"))); // NOI18N
+        btnIniciarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/usuario.png"))); // NOI18N
         btnIniciarSesion.setText("Iniciar Sesión");
         btnIniciarSesion.addActionListener(this::btnIniciarSesionActionPerformed);
 
@@ -105,6 +115,8 @@ public class FrmLogin extends javax.swing.JFrame {
         lblTitulo.setForeground(new java.awt.Color(0, 0, 51));
         lblTitulo.setText("HOTEL");
 
+        btnMensaje.setBackground(new java.awt.Color(255, 230, 230));
+        btnMensaje.setForeground(new java.awt.Color(204, 0, 0));
         btnMensaje.addActionListener(this::btnMensajeActionPerformed);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/icono_cama_90x65.png"))); // NOI18N
@@ -124,41 +136,38 @@ public class FrmLogin extends javax.swing.JFrame {
                         .addComponent(lblTitulo)
                         .addGap(245, 245, 245))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMensajeLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(201, 201, 201))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMensajeLayout.createSequentialGroup()
                 .addGroup(pnlMensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(pnlMensajeLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnIniciarSesion))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlMensajeLayout.createSequentialGroup()
-                        .addGap(150, 150, 150)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblUsuario)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                        .addGap(30, 30, 30)
                         .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlMensajeLayout.createSequentialGroup()
                         .addGap(139, 139, 139)
                         .addComponent(lblContrasena)
                         .addGap(18, 18, 18)
-                        .addComponent(txtContrasena)))
+                        .addComponent(txtContrasena, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)))
                 .addGap(227, 227, 227))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMensajeLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(201, 201, 201))
         );
         pnlMensajeLayout.setVerticalGroup(
             pnlMensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlMensajeLayout.createSequentialGroup()
                 .addComponent(PnlPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(pnlMensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlMensajeLayout.createSequentialGroup()
-                        .addGap(175, 175, 175)
-                        .addComponent(lblUsuario))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMensajeLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblTitulo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                        .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTitulo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGroup(pnlMensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblUsuario))
                 .addGap(16, 16, 16)
                 .addGroup(pnlMensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblContrasena)
@@ -197,7 +206,8 @@ public class FrmLogin extends javax.swing.JFrame {
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
         ControladorLogin controlador = new ControladorLogin(
             this, txtUsuario, txtContrasena);
-        controlador.iniciarSesion();
+
+    controlador.iniciarSesion();
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
 
     private void txtContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContrasenaActionPerformed

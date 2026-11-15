@@ -55,7 +55,7 @@ public class PanelHabitaciones extends javax.swing.JPanel {
         pnlEncabezado.setBackground(new java.awt.Color(255, 255, 255));
 
         lblEncabezado.setBackground(new java.awt.Color(0, 23, 75));
-        lblEncabezado.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblEncabezado.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
         lblEncabezado.setForeground(new java.awt.Color(255, 255, 255));
         lblEncabezado.setText("Registro de habitaciones");
         lblEncabezado.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -66,9 +66,9 @@ public class PanelHabitaciones extends javax.swing.JPanel {
         pnlDatosHabitaciones.setForeground(new java.awt.Color(232, 242, 252));
 
         lblTituloHabitaciones.setBackground(new java.awt.Color(215, 233, 250));
-        lblTituloHabitaciones.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lblTituloHabitaciones.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         lblTituloHabitaciones.setForeground(new java.awt.Color(0, 0, 51));
-        lblTituloHabitaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/camara.png"))); // NOI18N
+        lblTituloHabitaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/habitacion.png"))); // NOI18N
         lblTituloHabitaciones.setText("Habitaciones");
         lblTituloHabitaciones.setOpaque(true);
 
@@ -99,11 +99,9 @@ public class PanelHabitaciones extends javax.swing.JPanel {
         pnlDatosHabitaciones.setLayout(pnlDatosHabitacionesLayout);
         pnlDatosHabitacionesLayout.setHorizontalGroup(
             pnlDatosHabitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblTituloHabitaciones, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pnlDatosHabitacionesLayout.createSequentialGroup()
                 .addGroup(pnlDatosHabitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlDatosHabitacionesLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblTituloHabitaciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(pnlDatosHabitacionesLayout.createSequentialGroup()
                         .addGroup(pnlDatosHabitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlDatosHabitacionesLayout.createSequentialGroup()
@@ -122,20 +120,17 @@ public class PanelHabitaciones extends javax.swing.JPanel {
                                 .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtTarifa, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtCapacidad, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(cmbTipo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(pnlDatosHabitacionesLayout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addComponent(lblCapacidad)
+                            .addComponent(cmbTipo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnlDatosHabitacionesLayout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(lblCapacidad)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlDatosHabitacionesLayout.setVerticalGroup(
             pnlDatosHabitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlDatosHabitacionesLayout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(lblTituloHabitaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(24, 24, 24)
                 .addGroup(pnlDatosHabitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNumero)
                     .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))

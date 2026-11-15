@@ -21,26 +21,33 @@ private GestorHotel gestor;
 
     public ControladorLogin(FrmLogin vista, JTextField txtUsuario,
             JPasswordField txtContrasena) {
+
         this.vista = vista;
         this.txtUsuario = txtUsuario;
         this.txtContrasena = txtContrasena;
 
         gestor = GestorHotel.getInstancia();
     }
+
     public void iniciarSesion() {
+
         String usuario = txtUsuario.getText().trim();
         String contrasena = new String(txtContrasena.getPassword());
+
         if (gestor.iniciarSesion(usuario, contrasena)) {
+
+            vista.limpiarMensaje();
+
             FrmHotel ventana = new FrmHotel();
             ventana.setRecepcionista(gestor.getRecepcionistaActivo());
             ventana.setVisible(true);
+
             vista.dispose();
+
         } else {
-            JOptionPane.showMessageDialog(vista,
-                    "Usuario o contraseña incorrectos");
+
+            vista.mostrarMensaje("Usuario o contraseña incorrectos");
             txtContrasena.setText("");
         }
     }
 }
-
-    

@@ -54,7 +54,7 @@ public class PanelHuespedes extends javax.swing.JPanel {
         pnlEncabezado.setBackground(new java.awt.Color(255, 255, 255));
 
         lblEncabezado.setBackground(new java.awt.Color(0, 23, 75));
-        lblEncabezado.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblEncabezado.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
         lblEncabezado.setForeground(new java.awt.Color(255, 255, 255));
         lblEncabezado.setText("Registro de huespedes ");
         lblEncabezado.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -65,7 +65,7 @@ public class PanelHuespedes extends javax.swing.JPanel {
         pnlDatosHuesped.setForeground(new java.awt.Color(232, 242, 252));
 
         lblTituloHuespedes.setBackground(new java.awt.Color(215, 233, 250));
-        lblTituloHuespedes.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lblTituloHuespedes.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         lblTituloHuespedes.setForeground(new java.awt.Color(0, 0, 51));
         lblTituloHuespedes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/camara.png"))); // NOI18N
         lblTituloHuespedes.setText("  Huéspedes");
@@ -97,11 +97,9 @@ public class PanelHuespedes extends javax.swing.JPanel {
         pnlDatosHuesped.setLayout(pnlDatosHuespedLayout);
         pnlDatosHuespedLayout.setHorizontalGroup(
             pnlDatosHuespedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblTituloHuespedes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pnlDatosHuespedLayout.createSequentialGroup()
                 .addGroup(pnlDatosHuespedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlDatosHuespedLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblTituloHuespedes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(pnlDatosHuespedLayout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addGroup(pnlDatosHuespedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -115,20 +113,17 @@ public class PanelHuespedes extends javax.swing.JPanel {
                             .addComponent(txtIdentificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(pnlDatosHuespedLayout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addComponent(lblTelefono)
+                            .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnlDatosHuespedLayout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(lblTelefono)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlDatosHuespedLayout.setVerticalGroup(
             pnlDatosHuespedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlDatosHuespedLayout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(lblTituloHuespedes, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(24, 24, 24)
                 .addGroup(pnlDatosHuespedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblIdentificacion)
                     .addComponent(txtIdentificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))

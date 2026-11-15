@@ -8,6 +8,7 @@ import controlador.ControladorDisponibilidad;
 import controlador.ControladorReservas;
 import controlador.ControladorSimulacion;
 import controlador.ControladorCambioUsuario;
+import controlador.ControladorCheckInCheckOut;
 /**
  *
  * @author UTN
@@ -33,6 +34,11 @@ pnlHabitaciones.add(new PanelHabitaciones(), BorderLayout.CENTER);
     pnlInicio.add(new PanelInicio(), java.awt.BorderLayout.CENTER);
     pnlHuespedes.setLayout(new BorderLayout());
 pnlHuespedes.add(new PanelHuespedes(), BorderLayout.CENTER);
+pnlCheckInCheckOut.setLayout(new BorderLayout());
+
+PanelCheckInCheckOut panelCheckInCheckOut = new PanelCheckInCheckOut();
+pnlCheckInCheckOut.add(panelCheckInCheckOut, BorderLayout.CENTER);
+new ControladorCheckInCheckOut(panelCheckInCheckOut);
     }
     public javax.swing.JButton getBtnCambiarUsuario() {
     return btnCambiarUsuario;

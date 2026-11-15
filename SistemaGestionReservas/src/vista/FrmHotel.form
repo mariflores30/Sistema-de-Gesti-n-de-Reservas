@@ -71,7 +71,7 @@
                   <Component id="lblHotel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
                   <Component id="lblRecepcionista" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="386" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="btnCambiarUsuario" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
               </Group>

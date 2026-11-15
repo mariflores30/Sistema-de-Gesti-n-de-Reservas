@@ -201,7 +201,7 @@ public class PanelCheckInCheckOut extends javax.swing.JPanel {
         rdbCheckIn.setForeground(new java.awt.Color(0, 0, 0));
         rdbCheckIn.setText("Realizar Check-in");
 
-        lblTransicionCheckIn.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        lblTransicionCheckIn.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
         lblTransicionCheckIn.setForeground(new java.awt.Color(20, 20, 20));
         lblTransicionCheckIn.setText("(Confirmada → Hospedado)");
 
@@ -211,11 +211,13 @@ public class PanelCheckInCheckOut extends javax.swing.JPanel {
         rdbCheckOut.setText("Realizar Check-out");
         rdbCheckOut.addActionListener(this::rdbCheckOutActionPerformed);
 
-        lblTransicionCheckOut.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        lblTransicionCheckOut.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
         lblTransicionCheckOut.setForeground(new java.awt.Color(20, 20, 20));
         lblTransicionCheckOut.setText("(Hospedado → Finalizada)");
 
         btnProcesar.setBackground(new java.awt.Color(18, 100, 190));
+        btnProcesar.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        btnProcesar.setForeground(new java.awt.Color(255, 255, 255));
         btnProcesar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/check_procesar_32px.png"))); // NOI18N
         btnProcesar.setText("Procesar");
         btnProcesar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -236,18 +238,22 @@ public class PanelCheckInCheckOut extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1))
                     .addGroup(pnlDatosReservaLayout.createSequentialGroup()
-                        .addGap(151, 151, 151)
                         .addGroup(pnlDatosReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rdbCheckIn)
-                            .addComponent(rdbCheckOut))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(pnlDatosReservaLayout.createSequentialGroup()
+                                .addGap(151, 151, 151)
+                                .addComponent(rdbCheckIn)
+                                .addGap(22, 22, 22))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDatosReservaLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(rdbCheckOut)
+                                .addGap(18, 18, 18)))
                         .addGroup(pnlDatosReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblTransicionCheckIn)
                             .addComponent(lblTransicionCheckOut))))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 120, Short.MAX_VALUE))
             .addGroup(pnlDatosReservaLayout.createSequentialGroup()
-                .addGap(204, 204, 204)
-                .addComponent(btnProcesar, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(206, 206, 206)
+                .addComponent(btnProcesar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlDatosReservaLayout.setVerticalGroup(
@@ -263,17 +269,17 @@ public class PanelCheckInCheckOut extends javax.swing.JPanel {
                             .addComponent(lblCodigoReserva))))
                 .addGap(18, 18, 18)
                 .addComponent(pnlDetalleReserva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(pnlDatosReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rdbCheckIn)
-                    .addComponent(lblTransicionCheckIn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlDatosReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblTransicionCheckIn)
+                    .addComponent(rdbCheckIn))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlDatosReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rdbCheckOut)
                     .addComponent(lblTransicionCheckOut))
-                .addGap(18, 18, 18)
-                .addComponent(btnProcesar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnProcesar)
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -323,4 +329,49 @@ public class PanelCheckInCheckOut extends javax.swing.JPanel {
     private javax.swing.JRadioButton rdbCheckOut;
     private javax.swing.JTextField txtCodigoReserva;
     // End of variables declaration//GEN-END:variables
+
+
+    public javax.swing.JTextField getTxtCodigoReserva() {
+        return txtCodigoReserva;
+    }
+
+    public javax.swing.JButton getBtnBuscar() {
+        return jButton1;
+    }
+
+    public javax.swing.JButton getBtnProcesar() {
+        return btnProcesar;
+    }
+
+    public javax.swing.JLabel getLblNombreHuesped() {
+        return lblNombreHuesped;
+    }
+
+    public javax.swing.JLabel getLblNombreHabitacion() {
+        return lblNombreHabitacion;
+    }
+
+    public javax.swing.JLabel getLblFechaEntrada() {
+        return lblFechaEntrada;
+    }
+
+    public javax.swing.JLabel getLblFechaSalida() {
+        return lblFechaSalida;
+    }
+
+    public javax.swing.JLabel getLblEstadoActual() {
+        return lblEstadoActual;
+    }
+
+    public javax.swing.JRadioButton getRdbCheckIn() {
+        return rdbCheckIn;
+    }
+
+    public javax.swing.JRadioButton getRdbCheckOut() {
+        return rdbCheckOut;
+    }
+
+    public javax.swing.ButtonGroup getButtonGroup1() {
+        return buttonGroup1;
+    }
 }

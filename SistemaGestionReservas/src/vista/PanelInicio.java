@@ -71,9 +71,9 @@ public class PanelInicio extends javax.swing.JPanel {
         lblImagen = new javax.swing.JLabel();
         pnlIndicadores = new javax.swing.JPanel();
         pnlTotalHabitaciones = new javax.swing.JPanel();
+        lblCantidadHabitaciones = new javax.swing.JLabel();
         lblHabitaciones = new javax.swing.JLabel();
         lblIcono = new javax.swing.JLabel();
-        lblCantidadHabitaciones = new javax.swing.JLabel();
         pnlDisponibles = new javax.swing.JPanel();
         lblIconoDisponibles = new javax.swing.JLabel();
         lblDisponibles = new javax.swing.JLabel();
@@ -123,35 +123,35 @@ public class PanelInicio extends javax.swing.JPanel {
         lblHabitaciones.setForeground(new java.awt.Color(0, 0, 51));
         lblHabitaciones.setText("Total Habitaciones");
 
-        lblIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/cama.png"))); // NOI18N
+        lblIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/cama_1.png"))); // NOI18N
 
         javax.swing.GroupLayout pnlTotalHabitacionesLayout = new javax.swing.GroupLayout(pnlTotalHabitaciones);
         pnlTotalHabitaciones.setLayout(pnlTotalHabitacionesLayout);
         pnlTotalHabitacionesLayout.setHorizontalGroup(
             pnlTotalHabitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTotalHabitacionesLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblCantidadHabitaciones)
-                .addGap(47, 47, 47))
             .addGroup(pnlTotalHabitacionesLayout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(lblIcono)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(pnlTotalHabitacionesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblHabitaciones, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(pnlTotalHabitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlTotalHabitacionesLayout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(lblCantidadHabitaciones))
+                    .addGroup(pnlTotalHabitacionesLayout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(lblHabitaciones))
+                    .addGroup(pnlTotalHabitacionesLayout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(lblIcono)))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         pnlTotalHabitacionesLayout.setVerticalGroup(
             pnlTotalHabitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlTotalHabitacionesLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(8, 8, 8)
                 .addComponent(lblIcono)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblHabitaciones)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(lblCantidadHabitaciones)
-                .addGap(0, 30, Short.MAX_VALUE))
+                .addGap(0, 14, Short.MAX_VALUE))
         );
 
         pnlDisponibles.setBackground(new java.awt.Color(223, 247, 232));
@@ -195,7 +195,7 @@ public class PanelInicio extends javax.swing.JPanel {
         pnlOcupadas.setBackground(new java.awt.Color(255, 232, 229));
         pnlOcupadas.setPreferredSize(new java.awt.Dimension(140, 72));
 
-        lblIconoOcupadas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/01_total_habitaciones.png"))); // NOI18N
+        lblIconoOcupadas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/habitacion.png"))); // NOI18N
 
         lblOcupadas.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         lblOcupadas.setForeground(new java.awt.Color(0, 0, 51));
@@ -206,25 +206,29 @@ public class PanelInicio extends javax.swing.JPanel {
         pnlOcupadasLayout.setHorizontalGroup(
             pnlOcupadasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlOcupadasLayout.createSequentialGroup()
-                .addGroup(pnlOcupadasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(37, 37, 37)
+                .addGroup(pnlOcupadasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(pnlOcupadasLayout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(lblIconoOcupadas, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblCantidadOcupadas)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(pnlOcupadasLayout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addGroup(pnlOcupadasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblOcupadas)
-                            .addComponent(lblCantidadOcupadas))))
-                .addContainerGap(46, Short.MAX_VALUE))
+                        .addGap(0, 9, Short.MAX_VALUE)
+                        .addComponent(lblOcupadas)
+                        .addGap(37, 37, 37))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlOcupadasLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblIconoOcupadas, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45))
         );
         pnlOcupadasLayout.setVerticalGroup(
             pnlOcupadasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlOcupadasLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(lblIconoOcupadas)
                 .addGap(7, 7, 7)
-                .addComponent(lblOcupadas)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblCantidadOcupadas)
+                .addGroup(pnlOcupadasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblOcupadas)
+                    .addComponent(lblCantidadOcupadas))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
 
