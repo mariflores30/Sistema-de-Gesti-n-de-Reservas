@@ -4,6 +4,10 @@
  */
 package vista;
 import java.awt.BorderLayout;
+import controlador.ControladorDisponibilidad;
+import controlador.ControladorReservas;
+import controlador.ControladorSimulacion;
+import controlador.ControladorCambioUsuario;
 /**
  *
  * @author UTN
@@ -17,6 +21,10 @@ public class FrmHotel extends javax.swing.JFrame {
      */
     public FrmHotel() {
         initComponents();
+        new ControladorReservas(panelReservas);
+        new ControladorDisponibilidad(panelDisponibilidad);
+        new ControladorSimulacion(panelSimulacion);
+        new ControladorCambioUsuario(this);
     setSize(1050, 850);
     pnlHabitaciones.setLayout(new BorderLayout());
 pnlHabitaciones.add(new PanelHabitaciones(), BorderLayout.CENTER);
