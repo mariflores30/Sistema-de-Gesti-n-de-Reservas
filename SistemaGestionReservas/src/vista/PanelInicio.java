@@ -119,7 +119,7 @@ public class PanelInicio extends javax.swing.JPanel {
         pnlTotalHabitaciones.setForeground(new java.awt.Color(223, 241, 255));
         pnlTotalHabitaciones.setPreferredSize(new java.awt.Dimension(140, 72));
 
-        lblHabitaciones.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        lblHabitaciones.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         lblHabitaciones.setForeground(new java.awt.Color(0, 0, 51));
         lblHabitaciones.setText("Total Habitaciones");
 
@@ -129,17 +129,18 @@ public class PanelInicio extends javax.swing.JPanel {
         pnlTotalHabitaciones.setLayout(pnlTotalHabitacionesLayout);
         pnlTotalHabitacionesLayout.setHorizontalGroup(
             pnlTotalHabitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlTotalHabitacionesLayout.createSequentialGroup()
-                .addGroup(pnlTotalHabitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlTotalHabitacionesLayout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addComponent(lblIcono))
-                    .addComponent(lblHabitaciones))
-                .addContainerGap(11, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTotalHabitacionesLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(lblCantidadHabitaciones)
                 .addGap(47, 47, 47))
+            .addGroup(pnlTotalHabitacionesLayout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(lblIcono)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(pnlTotalHabitacionesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblHabitaciones, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                .addContainerGap())
         );
         pnlTotalHabitacionesLayout.setVerticalGroup(
             pnlTotalHabitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,7 +151,7 @@ public class PanelInicio extends javax.swing.JPanel {
                 .addComponent(lblHabitaciones)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblCantidadHabitaciones)
-                .addGap(0, 26, Short.MAX_VALUE))
+                .addGap(0, 30, Short.MAX_VALUE))
         );
 
         pnlDisponibles.setBackground(new java.awt.Color(223, 247, 232));
@@ -158,7 +159,7 @@ public class PanelInicio extends javax.swing.JPanel {
 
         lblIconoDisponibles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/huespedes.png"))); // NOI18N
 
-        lblDisponibles.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        lblDisponibles.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         lblDisponibles.setForeground(new java.awt.Color(0, 0, 51));
         lblDisponibles.setText("Disponibles");
 
@@ -173,12 +174,12 @@ public class PanelInicio extends javax.swing.JPanel {
             .addGroup(pnlDisponiblesLayout.createSequentialGroup()
                 .addGroup(pnlDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlDisponiblesLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(lblDisponibles))
-                    .addGroup(pnlDisponiblesLayout.createSequentialGroup()
                         .addGap(50, 50, 50)
-                        .addComponent(lblIconoDisponibles)))
-                .addContainerGap(31, Short.MAX_VALUE))
+                        .addComponent(lblIconoDisponibles))
+                    .addGroup(pnlDisponiblesLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(lblDisponibles)))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         pnlDisponiblesLayout.setVerticalGroup(
             pnlDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,9 +187,9 @@ public class PanelInicio extends javax.swing.JPanel {
                 .addComponent(lblIconoDisponibles)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblDisponibles, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblCantidadDisponibles)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pnlOcupadas.setBackground(new java.awt.Color(255, 232, 229));
@@ -196,7 +197,7 @@ public class PanelInicio extends javax.swing.JPanel {
 
         lblIconoOcupadas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/01_total_habitaciones.png"))); // NOI18N
 
-        lblOcupadas.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        lblOcupadas.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         lblOcupadas.setForeground(new java.awt.Color(0, 0, 51));
         lblOcupadas.setText("Ocupadas");
 
@@ -205,32 +206,32 @@ public class PanelInicio extends javax.swing.JPanel {
         pnlOcupadasLayout.setHorizontalGroup(
             pnlOcupadasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlOcupadasLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
                 .addGroup(pnlOcupadasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlOcupadasLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(lblCantidadOcupadas))
-                    .addComponent(lblOcupadas)
+                        .addGap(44, 44, 44)
+                        .addComponent(lblIconoOcupadas, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlOcupadasLayout.createSequentialGroup()
-                        .addGap(13, 13, 13)
-                        .addComponent(lblIconoOcupadas, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(43, Short.MAX_VALUE))
+                        .addGap(37, 37, 37)
+                        .addGroup(pnlOcupadasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblOcupadas)
+                            .addComponent(lblCantidadOcupadas))))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         pnlOcupadasLayout.setVerticalGroup(
             pnlOcupadasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlOcupadasLayout.createSequentialGroup()
                 .addComponent(lblIconoOcupadas)
-                .addGap(1, 1, 1)
+                .addGap(7, 7, 7)
                 .addComponent(lblOcupadas)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblCantidadOcupadas)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         pnlReservasConfirmadas.setBackground(new java.awt.Color(232, 234, 255));
         pnlReservasConfirmadas.setPreferredSize(new java.awt.Dimension(140, 72));
 
-        lblHabitaciones1.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        lblHabitaciones1.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         lblHabitaciones1.setForeground(new java.awt.Color(0, 0, 51));
         lblHabitaciones1.setText("Reservas confirmadas");
 
@@ -247,9 +248,11 @@ public class PanelInicio extends javax.swing.JPanel {
                         .addComponent(lblCantidadReservasConfirmadas))
                     .addGroup(pnlReservasConfirmadasLayout.createSequentialGroup()
                         .addGap(65, 65, 65)
-                        .addComponent(lblIconoReservas))
-                    .addComponent(lblHabitaciones1))
-                .addGap(12, 12, 12))
+                        .addComponent(lblIconoReservas)))
+                .addGap(49, 49, 49))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlReservasConfirmadasLayout.createSequentialGroup()
+                .addComponent(lblHabitaciones1)
+                .addContainerGap())
         );
         pnlReservasConfirmadasLayout.setVerticalGroup(
             pnlReservasConfirmadasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -260,7 +263,7 @@ public class PanelInicio extends javax.swing.JPanel {
                 .addComponent(lblHabitaciones1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblCantidadReservasConfirmadas)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pnlIngresos.setBackground(new java.awt.Color(233, 229, 255));
@@ -268,7 +271,7 @@ public class PanelInicio extends javax.swing.JPanel {
 
         lblIconoIngresos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/06_ingresos_esperados.png"))); // NOI18N
 
-        lblIngresos.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        lblIngresos.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         lblIngresos.setForeground(new java.awt.Color(0, 0, 51));
         lblIngresos.setText("Ingresos Esperados (confirmadas)");
 
@@ -286,7 +289,7 @@ public class PanelInicio extends javax.swing.JPanel {
                     .addGroup(pnlIngresosLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblIngresos)))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         pnlIngresosLayout.setVerticalGroup(
             pnlIngresosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -305,7 +308,7 @@ public class PanelInicio extends javax.swing.JPanel {
 
         lblIconoVencidas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/05_reservas_vencidas.png"))); // NOI18N
 
-        lblVencidas.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        lblVencidas.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         lblVencidas.setForeground(new java.awt.Color(0, 0, 51));
         lblVencidas.setText("Reservas vencidas");
 
@@ -338,7 +341,7 @@ public class PanelInicio extends javax.swing.JPanel {
         );
 
         lblTitulo.setBackground(new java.awt.Color(187, 221, 251));
-        lblTitulo.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        lblTitulo.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(0, 0, 51));
         lblTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/07_hotel.png"))); // NOI18N
         lblTitulo.setText("    Indicadores del hotel");
