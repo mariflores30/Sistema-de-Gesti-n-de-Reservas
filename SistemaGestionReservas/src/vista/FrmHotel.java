@@ -34,10 +34,10 @@ pnlHabitaciones.add(new PanelHabitaciones(), BorderLayout.CENTER);
     pnlInicio.add(new PanelInicio(), java.awt.BorderLayout.CENTER);
     pnlHuespedes.setLayout(new BorderLayout());
 pnlHuespedes.add(new PanelHuespedes(), BorderLayout.CENTER);
-pnlCheckInCheckOut.setLayout(new BorderLayout());
+pnlCheckInCheckOut.setLayout(new java.awt.GridBagLayout());
 
 PanelCheckInCheckOut panelCheckInCheckOut = new PanelCheckInCheckOut();
-pnlCheckInCheckOut.add(panelCheckInCheckOut, BorderLayout.CENTER);
+pnlCheckInCheckOut.add(panelCheckInCheckOut);
 new ControladorCheckInCheckOut(panelCheckInCheckOut);
     }
     public javax.swing.JButton getBtnCambiarUsuario() {

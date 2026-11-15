@@ -93,6 +93,11 @@ public class ControladorCheckInCheckOut {
 
         vista.getLblEstadoActual().setText(
                 reservaActual.getEstado().toString());
+        vista.getLblEstadoActual().setBackground(
+    new java.awt.Color(190, 245, 170));
+
+vista.getLblEstadoActual().setForeground(
+    java.awt.Color.BLACK);
     }
 
     private void configurarOpciones() {
@@ -180,5 +185,8 @@ public class ControladorCheckInCheckOut {
         vista.getRdbCheckOut().setEnabled(false);
 
         vista.getBtnProcesar().setEnabled(false);
+        vista.getLblEstadoActual().setText("");
+vista.getLblEstadoActual().setBackground(
+    new java.awt.Color(230, 230, 230));
     }
 }
