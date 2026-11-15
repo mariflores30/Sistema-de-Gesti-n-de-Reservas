@@ -142,7 +142,14 @@ public class GestorHotel {
         if (numero.equals("") || tipo.equals("")) {
             return "Debe completar todos los campos";
         }
-
+try {
+    int numeroHabitacion = Integer.parseInt(numero);
+    if (numeroHabitacion <= 0) {
+        return "El número debe ser positivo";
+    }
+} catch (NumberFormatException e) {
+    return "Debe ingresar un número válido";
+}
         for (int i = 0; i < habitaciones.size(); i++) {
 
             if (habitaciones.get(i).getNumero().equals(numero)) {
