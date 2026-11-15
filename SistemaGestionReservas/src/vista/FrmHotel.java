@@ -80,6 +80,7 @@ new ControladorCheckInCheckOut(panelCheckInCheckOut);
         lblHotel.setBackground(new java.awt.Color(255, 255, 255));
         lblHotel.setFont(new java.awt.Font("Georgia", 0, 24)); // NOI18N
         lblHotel.setForeground(new java.awt.Color(255, 255, 255));
+        lblHotel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/hotel.png"))); // NOI18N
         lblHotel.setText("HOTEL");
 
         lblRecepcionista.setBackground(new java.awt.Color(255, 255, 255));
@@ -99,7 +100,7 @@ new ControladorCheckInCheckOut(panelCheckInCheckOut);
                 .addComponent(lblHotel)
                 .addGap(138, 138, 138)
                 .addComponent(lblRecepcionista)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 386, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnCambiarUsuario)
                 .addGap(51, 51, 51))
         );
@@ -112,7 +113,7 @@ new ControladorCheckInCheckOut(panelCheckInCheckOut);
                         .addComponent(lblRecepcionista)
                         .addComponent(btnCambiarUsuario))
                     .addComponent(lblHotel))
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         tabPrincipal.setBackground(new java.awt.Color(255, 255, 255));
@@ -120,6 +121,7 @@ new ControladorCheckInCheckOut(panelCheckInCheckOut);
         tabPrincipal.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
 
         pnlInicio.setBackground(new java.awt.Color(255, 255, 255));
+        pnlInicio.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout pnlInicioLayout = new javax.swing.GroupLayout(pnlInicio);
         pnlInicio.setLayout(pnlInicioLayout);
@@ -129,10 +131,12 @@ new ControladorCheckInCheckOut(panelCheckInCheckOut);
         );
         pnlInicioLayout.setVerticalGroup(
             pnlInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 459, Short.MAX_VALUE)
+            .addGap(0, 449, Short.MAX_VALUE)
         );
 
-        tabPrincipal.addTab("Inicio", pnlInicio);
+        tabPrincipal.addTab("Inicio", new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/inicioPrincipal.png")), pnlInicio); // NOI18N
+
+        pnlHuespedes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout pnlHuespedesLayout = new javax.swing.GroupLayout(pnlHuespedes);
         pnlHuespedes.setLayout(pnlHuespedesLayout);
@@ -142,10 +146,12 @@ new ControladorCheckInCheckOut(panelCheckInCheckOut);
         );
         pnlHuespedesLayout.setVerticalGroup(
             pnlHuespedesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 459, Short.MAX_VALUE)
+            .addGap(0, 449, Short.MAX_VALUE)
         );
 
-        tabPrincipal.addTab("Huespedes", pnlHuespedes);
+        tabPrincipal.addTab("Huespedes", new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/huespedes.Principal.png")), pnlHuespedes); // NOI18N
+
+        pnlHabitaciones.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout pnlHabitacionesLayout = new javax.swing.GroupLayout(pnlHabitaciones);
         pnlHabitaciones.setLayout(pnlHabitacionesLayout);
@@ -155,12 +161,18 @@ new ControladorCheckInCheckOut(panelCheckInCheckOut);
         );
         pnlHabitacionesLayout.setVerticalGroup(
             pnlHabitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 459, Short.MAX_VALUE)
+            .addGap(0, 449, Short.MAX_VALUE)
         );
 
-        tabPrincipal.addTab("Habitaciones", pnlHabitaciones);
-        tabPrincipal.addTab("Reservas", panelReservas);
-        tabPrincipal.addTab("Disponibilidad", panelDisponibilidad);
+        tabPrincipal.addTab("Habitaciones", new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/habitaciones.Principal.png")), pnlHabitaciones); // NOI18N
+
+        panelReservas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tabPrincipal.addTab("Reservas", new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/reservas.Principal.png")), panelReservas); // NOI18N
+
+        panelDisponibilidad.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tabPrincipal.addTab("Disponibilidad", new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/disponibilidad.Principal.png")), panelDisponibilidad); // NOI18N
+
+        pnlCheckInCheckOut.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout pnlCheckInCheckOutLayout = new javax.swing.GroupLayout(pnlCheckInCheckOut);
         pnlCheckInCheckOut.setLayout(pnlCheckInCheckOutLayout);
@@ -170,11 +182,13 @@ new ControladorCheckInCheckOut(panelCheckInCheckOut);
         );
         pnlCheckInCheckOutLayout.setVerticalGroup(
             pnlCheckInCheckOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 459, Short.MAX_VALUE)
+            .addGap(0, 449, Short.MAX_VALUE)
         );
 
-        tabPrincipal.addTab("Check-in / Check-out", pnlCheckInCheckOut);
-        tabPrincipal.addTab("Simulacion", panelSimulacion);
+        tabPrincipal.addTab("Check-in / Check-out", new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/check.png")), pnlCheckInCheckOut); // NOI18N
+
+        panelSimulacion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tabPrincipal.addTab("Simulacion", new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/simulacion.Principal.png")), panelSimulacion); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
