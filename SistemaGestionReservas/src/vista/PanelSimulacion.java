@@ -45,22 +45,27 @@ public class PanelSimulacion extends javax.swing.JPanel {
         btnSimular = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblSimulacion = new javax.swing.JTable();
+        pnlTitulo = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblSimulacion.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblSimulacion.setText("Simulacion Informativa.No modifica datos reales");
-        jPanel1.add(lblSimulacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
+        jPanel1.add(lblSimulacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
 
         lblFechaReferencia.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         lblFechaReferencia.setText("Fecha de referencia:");
-        jPanel1.add(lblFechaReferencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+        jPanel1.add(lblFechaReferencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         txtFechaReferencia.addActionListener(this::txtFechaReferenciaActionPerformed);
-        jPanel1.add(txtFechaReferencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 172, -1));
+        jPanel1.add(txtFechaReferencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 172, -1));
 
         btnSimular.setText("Simular");
-        jPanel1.add(btnSimular, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, -1, -1));
+        btnSimular.addActionListener(this::btnSimularActionPerformed);
+        jPanel1.add(btnSimular, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, -1));
 
         tblSimulacion.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -90,17 +95,74 @@ public class PanelSimulacion extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblSimulacion);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 620, 230));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 620, 250));
+
+        pnlTitulo.setBackground(new java.awt.Color(0, 0, 102));
+
+        jLabel1.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Simulacion de vencimientos");
+
+        javax.swing.GroupLayout pnlTituloLayout = new javax.swing.GroupLayout(pnlTitulo);
+        pnlTitulo.setLayout(pnlTituloLayout);
+        pnlTituloLayout.setHorizontalGroup(
+            pnlTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlTituloLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlTituloLayout.setVerticalGroup(
+            pnlTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTituloLayout.createSequentialGroup()
+                .addContainerGap(18, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(14, 14, 14))
+        );
+
+        jPanel2.setBackground(new java.awt.Color(214, 230, 248));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/simulacion.png"))); // NOI18N
+        jLabel2.setText("Simulacion");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(11, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 639, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnlTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 636, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(pnlTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(81, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -108,13 +170,21 @@ public class PanelSimulacion extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFechaReferenciaActionPerformed
 
+    private void btnSimularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSimularActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSimular;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblFechaReferencia;
     private javax.swing.JLabel lblSimulacion;
+    private javax.swing.JPanel pnlTitulo;
     private javax.swing.JTable tblSimulacion;
     private javax.swing.JTextField txtFechaReferencia;
     // End of variables declaration//GEN-END:variables
