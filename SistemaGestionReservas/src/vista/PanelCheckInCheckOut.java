@@ -15,6 +15,7 @@ public class PanelCheckInCheckOut extends javax.swing.JPanel {
      */
     public PanelCheckInCheckOut() {
         initComponents();
+        lblEstadoActual.setOpaque(false);
     }
 
     /**
@@ -62,6 +63,7 @@ public class PanelCheckInCheckOut extends javax.swing.JPanel {
         pnlDatosReserva.setBackground(new java.awt.Color(255, 255, 255));
         pnlDatosReserva.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 179, 236)));
         pnlDatosReserva.setForeground(new java.awt.Color(232, 242, 252));
+        pnlDatosReserva.setPreferredSize(new java.awt.Dimension(520, 497));
 
         lblCheckinCheckout.setBackground(new java.awt.Color(215, 233, 250));
         lblCheckinCheckout.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
@@ -96,11 +98,11 @@ public class PanelCheckInCheckOut extends javax.swing.JPanel {
         lblHabitacion.setText("Habitación:");
 
         lblNombreHuesped.setBackground(new java.awt.Color(183, 211, 235));
-        lblNombreHuesped.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        lblNombreHuesped.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         lblNombreHuesped.setForeground(new java.awt.Color(0, 0, 0));
 
         lblNombreHabitacion.setBackground(new java.awt.Color(183, 211, 235));
-        lblNombreHabitacion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        lblNombreHabitacion.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         lblNombreHabitacion.setForeground(new java.awt.Color(0, 0, 0));
 
         lblEntrada.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
@@ -108,7 +110,7 @@ public class PanelCheckInCheckOut extends javax.swing.JPanel {
         lblEntrada.setText("Entrada programada:");
 
         lblFechaEntrada.setBackground(new java.awt.Color(183, 211, 235));
-        lblFechaEntrada.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        lblFechaEntrada.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         lblFechaEntrada.setForeground(new java.awt.Color(0, 0, 0));
 
         lblSalida.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
@@ -116,16 +118,19 @@ public class PanelCheckInCheckOut extends javax.swing.JPanel {
         lblSalida.setText("Salida programada:");
 
         lblFechaSalida.setBackground(new java.awt.Color(183, 211, 235));
-        lblFechaSalida.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        lblFechaSalida.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         lblFechaSalida.setForeground(new java.awt.Color(0, 0, 0));
 
         lblEstado.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         lblEstado.setForeground(new java.awt.Color(0, 0, 51));
         lblEstado.setText("Estado actual:");
 
-        lblEstadoActual.setBackground(new java.awt.Color(183, 211, 235));
-        lblEstadoActual.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        lblEstadoActual.setBackground(new java.awt.Color(234, 244, 252));
+        lblEstadoActual.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         lblEstadoActual.setForeground(new java.awt.Color(0, 0, 0));
+        lblEstadoActual.setOpaque(true);
+        lblEstadoActual.setVerifyInputWhenFocusTarget(false);
+        lblEstadoActual.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout pnlDetalleReservaLayout = new javax.swing.GroupLayout(pnlDetalleReserva);
         pnlDetalleReserva.setLayout(pnlDetalleReservaLayout);
@@ -163,7 +168,7 @@ public class PanelCheckInCheckOut extends javax.swing.JPanel {
                         .addGroup(pnlDetalleReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblFechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblEstadoActual, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(379, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlDetalleReservaLayout.setVerticalGroup(
             pnlDetalleReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,11 +194,11 @@ public class PanelCheckInCheckOut extends javax.swing.JPanel {
                 .addGroup(pnlDetalleReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblFechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlDetalleReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlDetalleReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblEstadoActual, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 41, Short.MAX_VALUE))
+                .addGap(9, 9, 9))
         );
 
         buttonGroup1.add(rdbCheckIn);
@@ -229,28 +234,27 @@ public class PanelCheckInCheckOut extends javax.swing.JPanel {
             .addComponent(lblCheckinCheckout, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnlDetalleReserva, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pnlDatosReservaLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(lblCodigoReserva)
+                .addGap(18, 18, 18)
+                .addComponent(txtCodigoReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(pnlDatosReservaLayout.createSequentialGroup()
+                .addGap(123, 123, 123)
                 .addGroup(pnlDatosReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlDatosReservaLayout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(lblCodigoReserva)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtCodigoReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1))
-                    .addGroup(pnlDatosReservaLayout.createSequentialGroup()
-                        .addGap(145, 145, 145)
-                        .addGroup(pnlDatosReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rdbCheckOut)
-                            .addComponent(rdbCheckIn))
-                        .addGap(60, 60, 60)
-                        .addGroup(pnlDatosReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblTransicionCheckIn)
-                            .addComponent(lblTransicionCheckOut))))
-                .addGap(0, 232, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDatosReservaLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(rdbCheckIn)
+                    .addComponent(rdbCheckOut))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnlDatosReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblTransicionCheckIn)
+                    .addComponent(lblTransicionCheckOut))
+                .addGap(145, 145, 145))
+            .addGroup(pnlDatosReservaLayout.createSequentialGroup()
+                .addGap(231, 231, 231)
                 .addComponent(btnProcesar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(218, 218, 218))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlDatosReservaLayout.setVerticalGroup(
             pnlDatosReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,30 +271,30 @@ public class PanelCheckInCheckOut extends javax.swing.JPanel {
                 .addComponent(pnlDetalleReserva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlDatosReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTransicionCheckIn)
-                    .addComponent(rdbCheckIn))
-                .addGap(10, 10, 10)
+                    .addComponent(rdbCheckIn)
+                    .addComponent(lblTransicionCheckIn))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlDatosReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rdbCheckOut)
-                    .addComponent(lblTransicionCheckOut))
-                .addGap(18, 18, 18)
+                    .addComponent(lblTransicionCheckOut)
+                    .addComponent(rdbCheckOut))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnProcesar)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblEncabezado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pnlDatosReserva, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblEncabezado, javax.swing.GroupLayout.DEFAULT_SIZE, 709, Short.MAX_VALUE)
+            .addComponent(pnlDatosReserva, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 709, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(lblEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlDatosReserva, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(pnlDatosReserva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

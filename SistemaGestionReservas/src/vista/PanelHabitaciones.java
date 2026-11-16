@@ -170,7 +170,7 @@ public class PanelHabitaciones extends javax.swing.JPanel {
         btnLimpiar.setBackground(new java.awt.Color(215, 233, 250));
         btnLimpiar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         btnLimpiar.setForeground(new java.awt.Color(0, 0, 51));
-        btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/eliminar.png"))); // NOI18N
+        btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/limpiar.png"))); // NOI18N
         btnLimpiar.setText("Limpiar");
 
         btnRegistrar.setBackground(new java.awt.Color(215, 233, 250));

@@ -86,6 +86,7 @@ new ControladorCheckInCheckOut(panelCheckInCheckOut);
         lblRecepcionista.setBackground(new java.awt.Color(255, 255, 255));
         lblRecepcionista.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
         lblRecepcionista.setForeground(new java.awt.Color(255, 255, 255));
+        lblRecepcionista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/icono_usuario_24x24.png"))); // NOI18N
         lblRecepcionista.setText("Recepcionista");
 
         btnCambiarUsuario.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N

@@ -91,15 +91,18 @@ public class ControladorCheckInCheckOut {
 
         vista.getLblFechaSalida().setText(salida);
 
-        vista.getLblEstadoActual().setText(
-                reservaActual.getEstado().toString());
-        vista.getLblEstadoActual().setBackground(
-    new java.awt.Color(190, 245, 170));
+        
+vista.getLblEstadoActual().setText(
+        reservaActual.getEstado().toString());
+
+vista.getLblEstadoActual().setOpaque(true);
+
+vista.getLblEstadoActual().setBackground(
+        new java.awt.Color(190, 245, 170));
 
 vista.getLblEstadoActual().setForeground(
-    java.awt.Color.BLACK);
+        java.awt.Color.BLACK);
     }
-
     private void configurarOpciones() {
 
         vista.getButtonGroup1().clearSelection();
@@ -166,27 +169,20 @@ vista.getLblEstadoActual().setForeground(
 
     private void limpiarDetalle() {
 
-        reservaActual = null;
+    reservaActual = null;
 
-        vista.getLblNombreHuesped().setText("");
+    vista.getLblNombreHuesped().setText("");
+    vista.getLblNombreHabitacion().setText("");
+    vista.getLblFechaEntrada().setText("");
+    vista.getLblFechaSalida().setText("");
 
-        vista.getLblNombreHabitacion().setText("");
+    vista.getLblEstadoActual().setText("");
+    vista.getLblEstadoActual().setOpaque(false);
 
-        vista.getLblFechaEntrada().setText("");
+    vista.getButtonGroup1().clearSelection();
 
-        vista.getLblFechaSalida().setText("");
-
-        vista.getLblEstadoActual().setText("");
-
-        vista.getButtonGroup1().clearSelection();
-
-        vista.getRdbCheckIn().setEnabled(false);
-
-        vista.getRdbCheckOut().setEnabled(false);
-
-        vista.getBtnProcesar().setEnabled(false);
-        vista.getLblEstadoActual().setText("");
-vista.getLblEstadoActual().setBackground(
-    new java.awt.Color(230, 230, 230));
-    }
+    vista.getRdbCheckIn().setEnabled(false);
+    vista.getRdbCheckOut().setEnabled(false);
+    vista.getBtnProcesar().setEnabled(false);
+}
 }
