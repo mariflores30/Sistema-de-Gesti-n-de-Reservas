@@ -151,10 +151,12 @@ public javax.swing.JComboBox<String> getCmbEstado() {
 
         txtFechaEntrada.addActionListener(this::txtFechaEntradaActionPerformed);
 
+        btnRegistrar.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         btnRegistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/registrar.png"))); // NOI18N
         btnRegistrar.setText("Registrar");
         btnRegistrar.addActionListener(this::btnRegistrarActionPerformed);
 
+        btnLimpiar.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/limpiar.png"))); // NOI18N
         btnLimpiar.setText("Limpiar");
 
@@ -186,6 +188,7 @@ public javax.swing.JComboBox<String> getCmbEstado() {
         });
         jScrollPane1.setViewportView(tblReservas);
 
+        btnActualizar.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         btnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/actualizar.png"))); // NOI18N
         btnActualizar.setText("Actualizar");
         btnActualizar.addActionListener(this::btnActualizarActionPerformed);

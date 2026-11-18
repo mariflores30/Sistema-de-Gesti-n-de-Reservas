@@ -35,8 +35,13 @@ private GestorHotel gestor;
         String contrasena = new String(txtContrasena.getPassword());
 
         if (gestor.iniciarSesion(usuario, contrasena)) {
-
             vista.limpiarMensaje();
+            int vencidas = gestor.actualizarReservasVencidas();
+       
+if (vencidas > 0) {
+    JOptionPane.showMessageDialog(vista,
+            "Reservas vencidas actualizadas: " + vencidas);
+}
 
             FrmHotel ventana = new FrmHotel();
             ventana.setRecepcionista(gestor.getRecepcionistaActivo());
