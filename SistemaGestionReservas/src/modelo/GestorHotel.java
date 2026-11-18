@@ -5,14 +5,16 @@
 package modelo;
 import java.util.ArrayList;
 import java.time.LocalDate;
+import javax.swing.JOptionPane;
 /**
  *
  * @author maria
  */
 
 public class GestorHotel {
+
     private static GestorHotel instancia;
-private ArrayList<Huesped> huespedes;
+    private ArrayList<Huesped> huespedes;
     private ArrayList<Habitacion> habitaciones;
     private ArrayList<Reserva> reservas;
 
@@ -25,12 +27,14 @@ private ArrayList<Huesped> huespedes;
 
         recepcionistaActivo = null;
     }
+
     public static synchronized GestorHotel getInstancia() {
         if (instancia == null) {
             instancia = new GestorHotel();
         }
         return instancia;
     }
+
     public synchronized boolean iniciarSesion(String usuario, String contrasena) {
         if (recepcionistaActivo != null) {
             return false;
@@ -42,15 +46,14 @@ private ArrayList<Huesped> huespedes;
                 && contrasena.equals("Hotel123")) {
             recepcionistaActivo = usuario;
             return true;
-
         } else if (usuario.equals("recepcion2")
                 && contrasena.equals("Hotel456")) {
-
             recepcionistaActivo = usuario;
             return true;
         }
         return false;
     }
+
     public synchronized void cerrarSesion() {
         recepcionistaActivo = null;
     }
@@ -60,12 +63,15 @@ private ArrayList<Huesped> huespedes;
     public synchronized String getRecepcionistaActivo() {
         return recepcionistaActivo;
     }
+
     public synchronized ArrayList<Huesped> getHuespedes() {
         return new ArrayList<>(huespedes);
     }
+
     public synchronized ArrayList<Habitacion> getHabitaciones() {
         return new ArrayList<>(habitaciones);
     }
+
     public synchronized ArrayList<Reserva> getReservas() {
         return new ArrayList<>(reservas);
     }
@@ -77,12 +83,28 @@ private ArrayList<Huesped> huespedes;
                 || telefono == null || correoElectronico == null) {
             return "Debe completar todos los campos";
         }
+
+        int numeroIdentificacion;
+        int numeroTelefono;
+
         try {
-    Integer.parseInt(identificacion.trim());
-    Integer.parseInt(telefono.trim());
-} catch (NumberFormatException e) {
-    return "La identificación y el teléfono deben contener solamente números.";
-}
+            numeroIdentificacion = Integer.parseInt(identificacion.trim());
+            numeroTelefono = Integer.parseInt(telefono.trim());
+
+        } catch (NumberFormatException e) {
+            return "La identificación y el teléfono deben contener solamente números.";
+        }
+
+        if (numeroIdentificacion <= 0 || numeroTelefono <= 0) {
+            return "La identificación y el teléfono deben ser positivos.";
+        }
+
+        try {
+            Integer.parseInt(nombreCompleto.trim());
+            return "El nombre no puede tener numeros.";
+        } catch (NumberFormatException e) {
+           
+        }
 
         identificacion = identificacion.trim();
         nombreCompleto = nombreCompleto.trim();
@@ -104,7 +126,6 @@ private ArrayList<Huesped> huespedes;
         }
 
         for (int i = 0; i < huespedes.size(); i++) {
-
             if (huespedes.get(i).getIdentificacion().equals(identificacion)) {
                 return "La identificacion ya existe";
             }
@@ -127,17 +148,17 @@ private ArrayList<Huesped> huespedes;
         if (numero.equals("") || tipo.equals("")) {
             return "Debe completar todos los campos";
         }
-        
-if (!numero.matches("[1-9][0-9]*")) {
-    return "El numero de habitacion debe ser un numero entero positivo";
-}
+
+        if (!numero.matches("[1-9][0-9]*")) {
+            return "El numero de habitacion debe ser un numero entero positivo";
+        }
 
         for (int i = 0; i < habitaciones.size(); i++) {
-
             if (habitaciones.get(i).getNumero().equals(numero)) {
                 return "La habitacion ya existe";
             }
         }
+
         if (!tipo.equals("Individual")
                 && !tipo.equals("Doble")
                 && !tipo.equals("Familiar")) {
@@ -148,16 +169,16 @@ if (!numero.matches("[1-9][0-9]*")) {
         habitaciones.add(nueva);
         return "Habitacion registrada correctamente";
     }
+
     private Huesped buscarHuesped(String identificacion) {
-
         for (int i = 0; i < huespedes.size(); i++) {
-
             if (huespedes.get(i).getIdentificacion().equals(identificacion)) {
                 return huespedes.get(i);
             }
         }
         return null;
     }
+
     private Habitacion buscarHabitacion(String numero) {
         for (int i = 0; i < habitaciones.size(); i++) {
             if (habitaciones.get(i).getNumero().equals(numero)) {
@@ -166,25 +187,24 @@ if (!numero.matches("[1-9][0-9]*")) {
         }
         return null;
     }
+
     private Reserva buscarReserva(String codigo) {
         for (int i = 0; i < reservas.size(); i++) {
             if (reservas.get(i).getCodigo().equals(codigo)) {
                 return reservas.get(i);
             }
         }
-
         return null;
     }
 
-    // Busca reserva desde la interfaz
+    // Busca reserva de la interfaz eso hace
     public synchronized Reserva obtenerReserva(String codigo) {
-
         if (codigo == null || codigo.trim().equals("")) {
             return null;
         }
-
         return buscarReserva(codigo.trim());
     }
+
     public synchronized String registrarReserva(String identificacion,
             String numeroHabitacion, int cantidadPersonas,
             LocalDate fechaEntrada, LocalDate fechaSalida) {
@@ -210,6 +230,7 @@ if (!numero.matches("[1-9][0-9]*")) {
         if (cantidadPersonas <= 0) {
             return "La cantidad de personas no es valida";
         }
+
         Huesped huesped = buscarHuesped(identificacion);
         Habitacion habitacion = buscarHabitacion(numeroHabitacion);
         if (huesped == null) {
@@ -221,6 +242,7 @@ if (!numero.matches("[1-9][0-9]*")) {
         if (cantidadPersonas > habitacion.getCapacidadMaxima()) {
             return "La habitacion no tiene capacidad suficiente";
         }
+
         for (int i = 0; i < reservas.size(); i++) {
             Reserva existente = reservas.get(i);
             if (existente.getHabitacion().getNumero().equals(numeroHabitacion)
@@ -234,6 +256,7 @@ if (!numero.matches("[1-9][0-9]*")) {
                 }
             }
         }
+
         String codigo = String.format("R%04d", reservas.size() + 1);
 
         Reserva nueva = new Reserva(codigo, huesped, habitacion,
@@ -260,6 +283,7 @@ if (!numero.matches("[1-9][0-9]*")) {
 
         return "No se puede realizar el check-in";
     }
+
     public synchronized String realizarCheckOut(String codigo) {
         if (recepcionistaActivo == null) {
             return "Debe iniciar sesion";
@@ -288,7 +312,6 @@ if (!numero.matches("[1-9][0-9]*")) {
                 }
             }
         }
-
         return true;
     }
 
@@ -321,6 +344,7 @@ if (!numero.matches("[1-9][0-9]*")) {
 
         return cantidad;
     }
+
     public synchronized ArrayList<Reserva> simularVencimientos(
             LocalDate fechaReferencia) {
         ArrayList<Reserva> vencidas = new ArrayList<>();
@@ -339,9 +363,11 @@ if (!numero.matches("[1-9][0-9]*")) {
 
         return vencidas;
     }
+
     public synchronized int getTotalHabitaciones() {
         return habitaciones.size();
     }
+
     public synchronized int getHabitacionesOcupadasActualmente() {
         int cantidad = 0;
         for (int i = 0; i < habitaciones.size(); i++) {
@@ -370,7 +396,6 @@ if (!numero.matches("[1-9][0-9]*")) {
     public synchronized int getCantidadReservasConfirmadas() {
         int cantidad = 0;
         for (int i = 0; i < reservas.size(); i++) {
-
             if (reservas.get(i).getEstado() == EstadoReserva.CONFIRMADA) {
                 cantidad++;
             }
@@ -396,8 +421,10 @@ if (!numero.matches("[1-9][0-9]*")) {
         if (listaReservas == null) {
             return 0;
         }
+
         return calcularIngresosEsperadosRecursivo(listaReservas, 0);
     }
+
     private long calcularIngresosEsperadosRecursivo(
             ArrayList<Reserva> listaReservas, int posicion) {
 
@@ -416,6 +443,7 @@ if (!numero.matches("[1-9][0-9]*")) {
         return calcularIngresosEsperadosRecursivo(
                 listaReservas, posicion + 1);
     }
+
     public synchronized int contarHabitacionesDisponibles(
             ArrayList<Habitacion> listaHabitaciones,
             ArrayList<Reserva> listaReservas, LocalDate fecha) {
@@ -428,6 +456,7 @@ if (!numero.matches("[1-9][0-9]*")) {
         return contarHabitacionesDisponiblesRecursivo(
                 listaHabitaciones, listaReservas, fecha, 0);
     }
+
     private int contarHabitacionesDisponiblesRecursivo(
             ArrayList<Habitacion> listaHabitaciones,
             ArrayList<Reserva> listaReservas,
@@ -446,4 +475,3 @@ if (!numero.matches("[1-9][0-9]*")) {
                 listaHabitaciones, listaReservas, fecha, posicion + 1);
     }
 }
-    

@@ -17,81 +17,171 @@ import vista.PanelReservas;
  * @author UTN
  */
 public class ControladorReservas {
-    
+
     private final PanelReservas vista;
     private final GestorHotel gestor;
 
-    public ControladorReservas(PanelReservas vista){
-        
-    this.vista = vista;
-    this.gestor = GestorHotel.getInstancia();
+    public ControladorReservas(PanelReservas vista) {
 
-    vista.getBtnRegistrar().addActionListener(e -> registrarReserva());
-    vista.getBtnLimpiar().addActionListener(e -> vista.limpiarCampos());
-    vista.getBtnActualizar().addActionListener(e -> actualizarCombos());
+        this.vista = vista;
+        this.gestor = GestorHotel.getInstancia();
 
-    actualizarCombos();
-    actualizarTabla();
-    }
-    public void actualizarCombos() {
-      vista.getCmbHuesped().removeAllItems();
-      for(Huesped h: gestor.getHuespedes()){
-          vista.getCmbHuesped().addItem(h.toString());
-        }
-        vista.getCmbHabitacion().removeAllItems();
-        for(Habitacion hab : gestor.getHabitaciones()){
-           vista.getCmbHabitacion().addItem(hab.toString());
-        }
-    }
+        vista.getBtnRegistrar().addActionListener(e -> registrarReserva());
 
-    private void registrarReserva(){
-     int posHuesped = vista.getCmbHuesped().getSelectedIndex();
-     int posHabitacion = vista.getCmbHabitacion().getSelectedIndex();
-     if(posHuesped <0 || posHabitacion <0) {
-       vista.mostrarMensaje("Debe registrar un huesped y una habitacion");
-        return;
-        }
-     
-     try{
-        int personas= Integer.parseInt( vista.getTxtPersonas().getText().trim());
-        LocalDate entrada= LocalDate.parse(vista.getTxtFechaEntrada().getText().trim());
-        LocalDate salida= LocalDate.parse(vista.getTxtFechaSalida().getText().trim());
-        
-        String identificacion= gestor.getHuespedes().get(posHuesped).getIdentificacion();
-        String numeroHabitacion= gestor.getHabitaciones().get(posHabitacion).getNumero();
-        
-        int reservasAntes= gestor.getReservas().size();
-        String resultado= gestor.registrarReserva(identificacion, numeroHabitacion, personas, entrada, salida);
-        vista.mostrarMensaje(resultado);
+        vista.getBtnLimpiar().addActionListener(e -> vista.limpiarCampos());
 
-        if(gestor.getReservas().size() >reservasAntes){
-            vista.limpiarCampos();
+        vista.getBtnActualizar().addActionListener(e -> {
+            actualizarCombos();
             actualizarTabla();
+        });
+
+        vista.getTxtCodigo().setEditable(false);
+        vista.getTxtNoches().setEditable(false);
+        vista.getTxtImporte().setEditable(false);
+        vista.getTxtRecepcionista().setEditable(false);
+
+        vista.getCmbEstado().removeAllItems();
+        vista.getCmbEstado().addItem("CONFIRMADA");
+        vista.getCmbEstado().addItem("HOSPEDADO");
+        vista.getCmbEstado().addItem("FINALIZADA");
+        vista.getCmbEstado().addItem("VENCIDA");
+        vista.getCmbEstado().setEnabled(false);
+
+        actualizarCombos();
+        actualizarTabla();
+    }
+
+    public void actualizarCombos() {
+
+        vista.getCmbHuesped().removeAllItems();
+
+        for (Huesped h : gestor.getHuespedes()) {
+            vista.getCmbHuesped().addItem(h.toString());
         }
-        
-        }catch(NumberFormatException ex) {
-            vista.mostrarMensaje("error: La cantidad de personas debe ser un numero entero");
-            
-        } catch (DateTimeParseException ex) {
-            vista.mostrarMensaje("escriba correctamente la fecha");
+
+        vista.getCmbHabitacion().removeAllItems();
+
+        for (Habitacion hab : gestor.getHabitaciones()) {
+            vista.getCmbHabitacion().addItem(hab.toString());
+        }
+
+        if (gestor.getRecepcionistaActivo() != null) {
+            vista.getTxtRecepcionista().setText(
+                    gestor.getRecepcionistaActivo());
         }
     }
 
-    public void actualizarTabla(){
-        DefaultTableModel modelo=(DefaultTableModel) vista.getTblReservas().getModel();
-        modelo.setRowCount(0);
-        for(Reserva r: gestor.getReservas()){
-        modelo.addRow(new Object[]{
-           r.getCodigo(),
-           r.getHuesped().getNombreCompleto(),
-           r.getHabitacion().getNumero(),
-           r.getFechaEntrada().toString(),
-           r.getFechaSalida().toString(),
-           "₡" + r.getImporteTotal(),
-           r.getEstado().toString()
-         });
-      }
+    private void registrarReserva() {
+
+        int posHuesped = vista.getCmbHuesped().getSelectedIndex();
+        int posHabitacion = vista.getCmbHabitacion().getSelectedIndex();
+
+        if (posHuesped < 0 || posHabitacion < 0) {
+            vista.mostrarMensaje(
+                    "Debe registrar un huesped y una habitacion");
+            return;
+        }
+
+        try {
+
+            int personas = Integer.parseInt(
+                    vista.getTxtPersonas().getText().trim());
+
+            LocalDate entrada = LocalDate.parse(
+                    vista.getTxtFechaEntrada().getText().trim());
+
+            LocalDate salida = LocalDate.parse(
+                    vista.getTxtFechaSalida().getText().trim());
+
+            String identificacion = gestor.getHuespedes()
+                    .get(posHuesped).getIdentificacion();
+
+            String numeroHabitacion = gestor.getHabitaciones()
+                    .get(posHabitacion).getNumero();
+
+            int reservasAntes = gestor.getReservas().size();
+
+            String resultado = gestor.registrarReserva(
+                    identificacion,
+                    numeroHabitacion,
+                    personas,
+                    entrada,
+                    salida);
+
+            vista.mostrarMensaje(resultado);
+
+            if (gestor.getReservas().size() > reservasAntes) {
+
+                Reserva nueva = gestor.getReservas().get(
+                        gestor.getReservas().size() - 1);
+
+                mostrarDatosReserva(nueva);
+
+                actualizarTabla();
+            }
+
+        } catch (NumberFormatException ex) {
+
+            vista.mostrarMensaje(
+                    "La cantidad de personas debe ser un numero entero");
+
+        } catch (DateTimeParseException ex) {
+
+            vista.mostrarMensaje(
+                    "Escriba correctamente la fecha (AAAA-MM-DD)");
+        }
     }
-    
-    
+
+    private void mostrarDatosReserva(Reserva r) {
+
+        vista.getTxtCodigo().setText(r.getCodigo());
+
+        vista.getCmbHuesped().setSelectedItem(
+                r.getHuesped().toString());
+
+        vista.getCmbHabitacion().setSelectedItem(
+                r.getHabitacion().toString());
+
+        vista.getTxtPersonas().setText(
+                String.valueOf(r.getCantidadPersonas()));
+
+        vista.getTxtFechaEntrada().setText(
+                r.getFechaEntrada().toString());
+
+        vista.getTxtFechaSalida().setText(
+                r.getFechaSalida().toString());
+
+        vista.getTxtNoches().setText(
+                String.valueOf(r.getCantidadNoches()));
+
+        vista.getTxtImporte().setText(
+                "₡" + r.getImporteTotal());
+
+        vista.getTxtRecepcionista().setText(
+                r.getRecepcionista());
+
+        vista.getCmbEstado().setSelectedItem(
+                r.getEstado().toString());
+    }
+
+    public void actualizarTabla() {
+
+        DefaultTableModel modelo =
+                (DefaultTableModel) vista.getTblReservas().getModel();
+
+        modelo.setRowCount(0);
+
+        for (Reserva r : gestor.getReservas()) {
+
+            modelo.addRow(new Object[]{
+                r.getCodigo(),
+                r.getHuesped().getNombreCompleto(),
+                r.getHabitacion().getNumero(),
+                r.getFechaEntrada().toString(),
+                r.getFechaSalida().toString(),
+                "₡" + r.getImporteTotal(),
+                r.getEstado().toString()
+            });
+        }
+    }
 }

@@ -34,11 +34,11 @@ pnlHabitaciones.add(new PanelHabitaciones(), BorderLayout.CENTER);
     pnlInicio.add(new PanelInicio(), java.awt.BorderLayout.CENTER);
     pnlHuespedes.setLayout(new BorderLayout());
 pnlHuespedes.add(new PanelHuespedes(), BorderLayout.CENTER);
-pnlCheckInCheckOut.setLayout(new java.awt.GridBagLayout());
-
+pnlCheckInCheckOut.setLayout(new BorderLayout());
 PanelCheckInCheckOut panelCheckInCheckOut = new PanelCheckInCheckOut();
-pnlCheckInCheckOut.add(panelCheckInCheckOut);
+pnlCheckInCheckOut.add(panelCheckInCheckOut, BorderLayout.CENTER);
 new ControladorCheckInCheckOut(panelCheckInCheckOut);
+
     }
     public javax.swing.JButton getBtnCambiarUsuario() {
     return btnCambiarUsuario;
@@ -86,11 +86,13 @@ new ControladorCheckInCheckOut(panelCheckInCheckOut);
         lblRecepcionista.setBackground(new java.awt.Color(255, 255, 255));
         lblRecepcionista.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
         lblRecepcionista.setForeground(new java.awt.Color(255, 255, 255));
-        lblRecepcionista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/icono_usuario_24x24.png"))); // NOI18N
+        lblRecepcionista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/recepcionista.png"))); // NOI18N
         lblRecepcionista.setText("Recepcionista");
 
         btnCambiarUsuario.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        btnCambiarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/recursos/actualizar.png"))); // NOI18N
         btnCambiarUsuario.setText("Cambiar Usuario");
+        btnCambiarUsuario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout pnlEncabezadoLayout = new javax.swing.GroupLayout(pnlEncabezado);
         pnlEncabezado.setLayout(pnlEncabezadoLayout);
@@ -99,9 +101,9 @@ new ControladorCheckInCheckOut(panelCheckInCheckOut);
             .addGroup(pnlEncabezadoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblHotel)
-                .addGap(138, 138, 138)
-                .addComponent(lblRecepcionista)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblRecepcionista)
+                .addGap(167, 167, 167)
                 .addComponent(btnCambiarUsuario)
                 .addGap(51, 51, 51))
         );
@@ -110,10 +112,10 @@ new ControladorCheckInCheckOut(panelCheckInCheckOut);
             .addGroup(pnlEncabezadoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblHotel)
+                    .addGroup(pnlEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(lblRecepcionista)
-                        .addComponent(btnCambiarUsuario))
-                    .addComponent(lblHotel))
+                        .addComponent(btnCambiarUsuario)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
