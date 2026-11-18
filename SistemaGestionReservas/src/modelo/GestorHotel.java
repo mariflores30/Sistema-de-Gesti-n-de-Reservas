@@ -77,6 +77,12 @@ private ArrayList<Huesped> huespedes;
                 || telefono == null || correoElectronico == null) {
             return "Debe completar todos los campos";
         }
+        try {
+    Integer.parseInt(identificacion.trim());
+    Integer.parseInt(telefono.trim());
+} catch (NumberFormatException e) {
+    return "La identificación y el teléfono deben contener solamente números.";
+}
 
         identificacion = identificacion.trim();
         nombreCompleto = nombreCompleto.trim();
@@ -121,6 +127,11 @@ private ArrayList<Huesped> huespedes;
         if (numero.equals("") || tipo.equals("")) {
             return "Debe completar todos los campos";
         }
+        
+if (!numero.matches("[1-9][0-9]*")) {
+    return "El numero de habitacion debe ser un numero entero positivo";
+}
+
         for (int i = 0; i < habitaciones.size(); i++) {
 
             if (habitaciones.get(i).getNumero().equals(numero)) {

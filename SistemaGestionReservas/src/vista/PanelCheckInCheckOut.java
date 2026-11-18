@@ -208,7 +208,7 @@ public class PanelCheckInCheckOut extends javax.swing.JPanel {
 
         lblTransicionCheckIn.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
         lblTransicionCheckIn.setForeground(new java.awt.Color(20, 20, 20));
-        lblTransicionCheckIn.setText("(Confirmada → Hospedado)");
+        lblTransicionCheckIn.setText("(Confirmada -> Hospedado)");
 
         buttonGroup1.add(rdbCheckOut);
         rdbCheckOut.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
@@ -218,7 +218,7 @@ public class PanelCheckInCheckOut extends javax.swing.JPanel {
 
         lblTransicionCheckOut.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
         lblTransicionCheckOut.setForeground(new java.awt.Color(20, 20, 20));
-        lblTransicionCheckOut.setText("(Hospedado → Finalizada)");
+        lblTransicionCheckOut.setText("(Hospedado -> Finalizada)");
 
         btnProcesar.setBackground(new java.awt.Color(18, 100, 190));
         btnProcesar.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
@@ -287,7 +287,7 @@ public class PanelCheckInCheckOut extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lblEncabezado, javax.swing.GroupLayout.DEFAULT_SIZE, 709, Short.MAX_VALUE)
-            .addComponent(pnlDatosReserva, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 709, Short.MAX_VALUE)
+            .addComponent(pnlDatosReserva, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
